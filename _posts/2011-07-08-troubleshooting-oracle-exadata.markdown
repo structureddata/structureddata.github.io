@@ -1,7 +1,7 @@
 ---
 author: Greg Rahn
 comments: true
-date: 2011-07-09T01:34:48.000Z
+date: 2011-07-08
 layout: post
 slug: troubleshooting-oracle-exadata
 title: Troubleshooting Oracle Exadata

@@ -1,7 +1,7 @@
 ---
 author: Greg Rahn
 comments: true
-date: 2009-07-07T00:00:17.000Z
+date: 2009-07-06
 layout: post
 slug: oracle-parallel-execution-interconnect-myths-and-misunderstandings
 title: 'Oracle Parallel Execution: Interconnect Myths And Misunderstandings'

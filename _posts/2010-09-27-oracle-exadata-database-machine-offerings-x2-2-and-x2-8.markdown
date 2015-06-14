@@ -1,7 +1,7 @@
 ---
 author: Greg Rahn
 comments: true
-date: 2010-09-28T05:26:38.000Z
+date: 2010-09-27
 layout: post
 slug: oracle-exadata-database-machine-offerings-x2-2-and-x2-8
 title: 'Oracle Exadata Database Machine Offerings: X2-2 and X2-8'

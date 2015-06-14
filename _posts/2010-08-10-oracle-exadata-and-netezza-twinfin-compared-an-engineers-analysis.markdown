@@ -1,7 +1,7 @@
 ---
 author: Greg Rahn
 comments: true
-date: 2010-08-11T04:07:15.000Z
+date: 2010-08-10
 layout: post
 slug: oracle-exadata-and-netezza-twinfin-compared-an-engineers-analysis
 title: Oracle Exadata and Netezza TwinFin Compared – An Engineer’s Analysis

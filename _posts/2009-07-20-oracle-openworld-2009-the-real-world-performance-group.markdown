@@ -1,7 +1,7 @@
 ---
 author: Greg Rahn
 comments: true
-date: 2009-07-21T04:25:00.000Z
+date: 2009-07-20
 layout: post
 slug: oracle-openworld-2009-the-real-world-performance-group
 title: 'Oracle OpenWorld 2009: The Real-World Performance Group'

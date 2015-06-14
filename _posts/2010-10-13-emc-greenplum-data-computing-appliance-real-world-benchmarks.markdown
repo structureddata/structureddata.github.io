@@ -1,7 +1,7 @@
 ---
 author: Greg Rahn
 comments: true
-date: 2010-10-14T05:14:12.000Z
+date: 2010-10-13
 layout: post
 slug: emc-greenplum-data-computing-appliance-real-world-benchmarks
 title: EMC Greenplum Data Computing Appliance Real World Benchmarks

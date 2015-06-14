@@ -1,7 +1,7 @@
 ---
 author: Greg Rahn
 comments: true
-date: 2007-11-22T01:30:27.000Z
+date: 2007-11-21
 layout: post
 slug: oracle-database-11g-release-1-111060-released-for-hp-ux-pa-risc
 title: Oracle Database 11g Release 1 (11.1.0.6.0) for HP-UX PA-RISC

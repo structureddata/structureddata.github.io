@@ -1,7 +1,7 @@
 ---
 author: Greg Rahn
 comments: true
-date: 2009-02-09T06:46:58.000Z
+date: 2009-02-08
 layout: post
 slug: a-new-look-for-structured-data
 title: A New Look For Structured Data

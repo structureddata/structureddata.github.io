@@ -1,7 +1,7 @@
 ---
 author: Greg Rahn
 comments: true
-date: 2011-08-19T04:17:09.000Z
+date: 2011-08-18
 layout: post
 slug: creating-optimizer-trace-files
 title: 'Creating Optimizer Trace Files '

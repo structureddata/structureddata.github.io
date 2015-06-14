@@ -1,7 +1,7 @@
 ---
 author: Greg Rahn
 comments: true
-date: 2007-12-17T07:30:48.000Z
+date: 2007-12-16
 layout: post
 slug: oracle-myth-busting-show-dont-tell
 title: "Oracle Myth Busting: Show, Don't Tell"

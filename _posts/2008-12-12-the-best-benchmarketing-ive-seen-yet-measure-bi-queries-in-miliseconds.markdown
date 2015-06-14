@@ -1,7 +1,7 @@
 ---
 author: Greg Rahn
 comments: true
-date: 2008-12-13T07:59:13.000Z
+date: 2008-12-12
 layout: post
 slug: the-best-benchmarketing-ive-seen-yet-measure-bi-queries-in-miliseconds
 title: "The Best Benchmarketing I've Seen Yet: Measure BI Queries In Milliseconds"

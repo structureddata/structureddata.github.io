@@ -1,7 +1,7 @@
 ---
 author: Greg Rahn
 comments: true
-date: 2010-01-04T00:09:39.000Z
+date: 2010-01-03
 layout: post
 slug: 2009-year-end-zeitgeist
 title: 2009 Year-End Zeitgeist

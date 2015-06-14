@@ -1,7 +1,7 @@
 ---
 author: Greg Rahn
 comments: true
-date: 2007-10-27T01:00:15.000Z
+date: 2007-10-26
 layout: post
 slug: ideas-for-oracle-performance-topics
 title: Ideas For Oracle Performance Topics

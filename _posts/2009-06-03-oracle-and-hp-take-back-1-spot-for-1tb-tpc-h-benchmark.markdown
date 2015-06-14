@@ -1,7 +1,7 @@
 ---
 author: Greg Rahn
 comments: false
-date: 2009-06-04T05:34:28.000Z
+date: 2009-06-03
 layout: post
 slug: oracle-and-hp-take-back-1-spot-for-1tb-tpc-h-benchmark
 title: 'Oracle And HP Take Back #1 Spot For 1TB TPC-H Benchmark'

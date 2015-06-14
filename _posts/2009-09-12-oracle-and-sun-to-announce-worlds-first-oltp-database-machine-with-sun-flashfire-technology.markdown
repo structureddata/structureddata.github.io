@@ -1,7 +1,7 @@
 ---
 author: Greg Rahn
 comments: true
-date: 2009-09-13T04:36:12.000Z
+date: 2009-09-12
 layout: post
 slug: oracle-and-sun-to-announce-worlds-first-oltp-database-machine-with-sun-flashfire-technology
 title: Oracle And Sun To Announce World’s First OLTP Database Machine With Sun FlashFire Technology

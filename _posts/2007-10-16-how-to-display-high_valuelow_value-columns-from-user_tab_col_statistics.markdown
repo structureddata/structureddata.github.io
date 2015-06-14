@@ -1,7 +1,7 @@
 ---
 author: Greg Rahn
 comments: true
-date: 2007-10-17T02:41:51.000Z
+date: 2007-10-16
 layout: post
 slug: how-to-display-high_valuelow_value-columns-from-user_tab_col_statistics
 title: How to Display HIGH_VALUE/LOW_VALUE Columns from USER_TAB_COL_STATISTICS

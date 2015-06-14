@@ -1,7 +1,7 @@
 ---
 author: Greg Rahn
 comments: true
-date: 2011-09-26T02:16:41.000Z
+date: 2011-09-25
 layout: post
 slug: critical-skills-for-performance-work
 title: Critical Skills for Performance Work

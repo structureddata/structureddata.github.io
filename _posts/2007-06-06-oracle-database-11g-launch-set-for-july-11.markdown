@@ -1,7 +1,7 @@
 ---
 author: Greg Rahn
 comments: true
-date: 2007-06-07T04:15:09.000Z
+date: 2007-06-06
 layout: post
 slug: oracle-database-11g-launch-set-for-july-11
 title: Oracle Database 11g Launch Set For July 11

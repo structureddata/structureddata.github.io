@@ -1,7 +1,7 @@
 ---
 author: Greg Rahn
 comments: true
-date: 2011-06-09T06:27:46.000Z
+date: 2011-06-08
 layout: post
 slug: implicit-datatype-conversion-histograms-bad-execution-plan
 title: Implicit Datatype Conversion + Histograms = Bad Execution Plan?

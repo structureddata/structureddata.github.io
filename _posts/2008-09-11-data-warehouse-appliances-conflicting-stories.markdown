@@ -1,7 +1,7 @@
 ---
 author: Greg Rahn
 comments: true
-date: 2008-09-12T05:02:40.000Z
+date: 2008-09-11
 layout: post
 slug: data-warehouse-appliances-conflicting-stories
 title: 'Data Warehouse Appliances: Conflicting Stories'

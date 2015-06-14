@@ -1,7 +1,7 @@
 ---
 author: Greg Rahn
 comments: true
-date: 2009-10-05T05:19:49.000Z
+date: 2009-10-04
 layout: post
 slug: oracle-openworld-unconference
 title: Oracle OpenWorld Unconference

@@ -1,7 +1,7 @@
 ---
 author: Greg Rahn
 comments: true
-date: 2009-06-24T04:51:00.000Z
+date: 2009-06-23
 layout: post
 slug: exadata-snippits-from-oracle-f4q09-earnings-call
 title: Exadata Snippits From Oracle F4Q09 Earnings Call

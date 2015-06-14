@@ -1,7 +1,7 @@
 ---
 author: Greg Rahn
 comments: true
-date: 2008-01-07T00:00:13.000Z
+date: 2008-01-06
 layout: post
 slug: oracle-11g-real-time-sql-monitoring-using-dbms_sqltunereport_sql_monitor
 title: 'Oracle 11g: Real-Time SQL Monitoring Using DBMS_SQLTUNE.REPORT_SQL_MONITOR'

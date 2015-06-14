@@ -1,7 +1,7 @@
 ---
 author: Greg Rahn
 comments: true
-date: 2007-10-24T02:00:50.000Z
+date: 2007-10-23
 layout: post
 slug: bloom-filters
 title: Bloom Filters
