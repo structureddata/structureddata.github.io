@@ -1,7 +1,7 @@
 ---
 author: Greg Rahn
 comments: true
-date: 2008-02-19T02:00:20.000Z
+date: 2008-02-18 
 layout: post
 slug: ansi-outer-joins-and-lateral-views
 title: ANSI Outer Joins And Lateral Views
