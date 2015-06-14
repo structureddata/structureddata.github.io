@@ -1,0 +1,38 @@
+
+       SID	  PID SPID	       Inst	 Group	      Set     Degree Req Degree Wait Event		       SQL_ID
+---------- ---------- ---------- ---------- ---------- ---------- ---------- ---------- ------------------------------ -------------
+       964	   33 8606		  1						PX Deq: reap credit	       8z3tqxkjw4sg4
+       949	  111 15081		  1	     1		1	   8	      8 PX Deq: Execution Msg	       8z3tqxkjw4sg4
+       983	   33 28131		  2	     1		1	   8	      8 PX Deq: Execution Msg	       8z3tqxkjw4sg4
+      1018	   58 5696		  3	     1		1	   8	      8 PX Deq: Execution Msg	       8z3tqxkjw4sg4
+      1083	   33 15041		  4	     1		1	   8	      8 PX Deq: Execution Msg	       8z3tqxkjw4sg4
+       970	   30 23343		  5	     1		1	   8	      8 PX Deq: Execution Msg	       8z3tqxkjw4sg4
+      1025	   33 5455		  6	     1		1	   8	      8 PX Deq: Execution Msg	       8z3tqxkjw4sg4
+      1099	   33 20635		  7	     1		1	   8	      8 PX Deq: Execution Msg	       8z3tqxkjw4sg4
+      1012	   30 11275		  8	     1		1	   8	      8 PX Deq: Execution Msg	       8z3tqxkjw4sg4
+      1007	   31 18039		  2						PX Deq: Execute Reply	       crqv3q3x9rtgt
+       965	   42 22801		  1	     1		1	  16	     16 cell smart table scan	       crqv3q3x9rtgt
+
+       SID	  PID SPID	       Inst	 Group	      Set     Degree Req Degree Wait Event		       SQL_ID
+---------- ---------- ---------- ---------- ---------- ---------- ---------- ---------- ------------------------------ -------------
+       957	   36 22781		  1	     1		1	  16	     16 cell smart table scan	       crqv3q3x9rtgt
+      1049	   39 22787		  1	     1		1	  16	     16 cell smart table scan	       crqv3q3x9rtgt
+      1016	   40 22795		  1	     1		1	  16	     16 cell smart table scan	       crqv3q3x9rtgt
+       988	   37 22783		  1	     1		1	  16	     16 cell smart table scan	       crqv3q3x9rtgt
+       998	   35 22779		  1	     1		1	  16	     16 cell smart table scan	       crqv3q3x9rtgt
+      1002	   38 22785		  1	     1		1	  16	     16 cell smart table scan	       crqv3q3x9rtgt
+       911	   41 22797		  1	     1		1	  16	     16 cell smart table scan	       crqv3q3x9rtgt
+       987	   38 16296		  2	     1		1	  16	     16 cell smart table scan	       crqv3q3x9rtgt
+      1099	   36 16294		  2	     1		1	  16	     16 cell smart table scan	       crqv3q3x9rtgt
+      1009	   41 16304		  2	     1		1	  16	     16 cell smart table scan	       crqv3q3x9rtgt
+      1023	   34 16290		  2	     1		1	  16	     16 cell smart table scan	       crqv3q3x9rtgt
+
+       SID	  PID SPID	       Inst	 Group	      Set     Degree Req Degree Wait Event		       SQL_ID
+---------- ---------- ---------- ---------- ---------- ---------- ---------- ---------- ------------------------------ -------------
+      1026	   39 16298		  2	     1		1	  16	     16 cell smart table scan	       crqv3q3x9rtgt
+      1044	   40 16300		  2	     1		1	  16	     16 cell smart table scan	       crqv3q3x9rtgt
+      1058	   35 16292		  2	     1		1	  16	     16 cell smart table scan	       crqv3q3x9rtgt
+       981	   42 16334		  2	     1		1	  16	     16 cell smart table scan	       crqv3q3x9rtgt
+
+
+Elapsed: 00:00:00.20

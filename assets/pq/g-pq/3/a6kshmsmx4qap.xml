@@ -1,0 +1,1281 @@
+<sql_monitor_report>
+  <report_parameters>
+    <sql_id>a6kshmsmx4qap</sql_id>
+    <bucket_count>10</bucket_count>
+    <interval_start>06/21/2009 14:11:28</interval_start>
+    <interval_end>06/21/2009 14:34:26</interval_end>
+  </report_parameters>
+  <target instance_id="1" session_id="969" session_serial="2381" sql_id="a6kshmsmx4qap" sql_exec_start="06/21/2009 14:11:29" sql_exec_id="16777217" sql_plan_hash="4022074758">
+    <sql_fulltext><![CDATA[select /*+ parallel ( t1, 16)   parallel (t2, 16)  */
+min (t1.BSNS_UNIT_KEY +t2.BSNS_UNIT_KEY ) , max ( t1.DAY_KEY+t2.DAY_KEY  ), avg(t1.DAY_KEY +t2.DAY_KEY),
+	avg( t1.QTY + t2.QTY ), max(t1.EXTENDED_AMT  ), max(t2.ACTN_CD) , max(t1.SKU_ITEM_TYP_CD)
+from
+  DWB_RTL_SLS_RETRN_LINE_ITEM partition (R20090531) t1 ,
+  DWB_RTL_SLS_RETRN_LINE_ITEM partition (R20090531) t2
+where t1.TRX_NBR = t2.TRX_NBR
+]]></sql_fulltext>
+    <status>DONE (ALL ROWS)</status>
+    <refresh_count>16740</refresh_count>
+    <first_refresh_time>06/21/2009 14:11:29</first_refresh_time>
+    <last_refresh_time>06/21/2009 14:34:25</last_refresh_time>
+    <duration>1377</duration>
+  </target>
+  <stats type="monitor">
+    <stat name="elapsed_time">20870468083</stat>
+    <stat name="cpu_time">10418234184</stat>
+    <stat name="user_io_wait_time">724254744</stat>
+    <stat name="application_wait_time">398</stat>
+    <stat name="concurrency_wait_time">59181361</stat>
+    <stat name="cluster_wait_time">119772</stat>
+    <stat name="other_wait_time">9668677624</stat>
+    <stat name="user_fetch_count">1</stat>
+    <stat name="buffer_gets">2359312</stat>
+    <stat name="disk_reads">5227480</stat>
+    <stat name="direct_writes">2904297</stat>
+  </stats>
+  <activity_sampled start_time="06/21/2009 14:11:31" end_time="06/21/2009 14:34:25" duration="1375" activity_count="19916" wait_count="5528" cpu_count="14388" most_active="Cpu">
+    <activity class="Concurrency" event="buffer busy waits">71</activity>
+    <activity class="Cpu">14388</activity>
+    <activity class="Other" event="PX qref latch">1774</activity>
+    <activity class="Other" event="latch free">12</activity>
+    <activity class="Scheduler" event="resmgr:cpu quantum">2881</activity>
+    <activity class="User I/O" event="cell single block physical read">1</activity>
+    <activity class="User I/O" event="cell smart table scan">8</activity>
+    <activity class="User I/O" event="direct path read temp">571</activity>
+    <activity class="User I/O" event="direct path write temp">32</activity>
+    <activity class="User I/O" event="local write wait">178</activity>
+    <activity_histogram bucket_count="10">
+      <bucket bucket_number="1" start_time="06/21/2009 14:11:31" end_time="06/21/2009 14:13:45" duration="135" activity_count="1662" cpu_count="1264" wait_count="398" most_active="Cpu">
+        <activity class="Concurrency" event="buffer busy waits">21</activity>
+        <activity class="Cpu">1264</activity>
+        <activity class="Other" event="PX qref latch">277</activity>
+        <activity class="Other" event="latch free">1</activity>
+        <activity class="Scheduler" event="resmgr:cpu quantum">12</activity>
+        <activity class="User I/O" event="cell smart table scan">4</activity>
+        <activity class="User I/O" event="direct path read temp">39</activity>
+        <activity class="User I/O" event="direct path write temp">23</activity>
+        <activity class="User I/O" event="local write wait">21</activity>
+      </bucket>
+      <bucket bucket_number="2" start_time="06/21/2009 14:13:46" end_time="06/21/2009 14:16:03" duration="138" activity_count="1921" cpu_count="1483" wait_count="438" most_active="Cpu">
+        <activity class="Concurrency" event="buffer busy waits">16</activity>
+        <activity class="Cpu">1483</activity>
+        <activity class="Other" event="PX qref latch">367</activity>
+        <activity class="Other" event="latch free">6</activity>
+        <activity class="Scheduler" event="resmgr:cpu quantum">7</activity>
+        <activity class="User I/O" event="cell smart table scan">2</activity>
+        <activity class="User I/O" event="local write wait">40</activity>
+      </bucket>
+      <bucket bucket_number="3" start_time="06/21/2009 14:16:04" end_time="06/21/2009 14:18:21" duration="138" activity_count="1886" cpu_count="1462" wait_count="424" most_active="Cpu">
+        <activity class="Concurrency" event="buffer busy waits">6</activity>
+        <activity class="Cpu">1462</activity>
+        <activity class="Other" event="PX qref latch">366</activity>
+        <activity class="Other" event="latch free">2</activity>
+        <activity class="Scheduler" event="resmgr:cpu quantum">9</activity>
+        <activity class="User I/O" event="cell single block physical read">1</activity>
+        <activity class="User I/O" event="cell smart table scan">1</activity>
+        <activity class="User I/O" event="direct path write temp">1</activity>
+        <activity class="User I/O" event="local write wait">38</activity>
+      </bucket>
+      <bucket bucket_number="4" start_time="06/21/2009 14:18:22" end_time="06/21/2009 14:20:39" duration="138" activity_count="1942" cpu_count="1523" wait_count="419" most_active="Cpu">
+        <activity class="Concurrency" event="buffer busy waits">15</activity>
+        <activity class="Cpu">1523</activity>
+        <activity class="Other" event="PX qref latch">368</activity>
+        <activity class="Other" event="latch free">1</activity>
+        <activity class="Scheduler" event="resmgr:cpu quantum">6</activity>
+        <activity class="User I/O" event="local write wait">29</activity>
+      </bucket>
+      <bucket bucket_number="5" start_time="06/21/2009 14:20:40" end_time="06/21/2009 14:22:57" duration="138" activity_count="1905" cpu_count="1452" wait_count="453" most_active="Cpu">
+        <activity class="Concurrency" event="buffer busy waits">13</activity>
+        <activity class="Cpu">1452</activity>
+        <activity class="Other" event="PX qref latch">383</activity>
+        <activity class="Other" event="latch free">1</activity>
+        <activity class="Scheduler" event="resmgr:cpu quantum">8</activity>
+        <activity class="User I/O" event="cell smart table scan">1</activity>
+        <activity class="User I/O" event="local write wait">47</activity>
+      </bucket>
+      <bucket bucket_number="6" start_time="06/21/2009 14:22:58" end_time="06/21/2009 14:25:15" duration="138" activity_count="2136" cpu_count="1478" wait_count="658" most_active="Cpu">
+        <activity class="Cpu">1478</activity>
+        <activity class="Other" event="PX qref latch">13</activity>
+        <activity class="Other" event="latch free">1</activity>
+        <activity class="Scheduler" event="resmgr:cpu quantum">549</activity>
+        <activity class="User I/O" event="direct path read temp">84</activity>
+        <activity class="User I/O" event="direct path write temp">8</activity>
+        <activity class="User I/O" event="local write wait">3</activity>
+      </bucket>
+      <bucket bucket_number="7" start_time="06/21/2009 14:25:16" end_time="06/21/2009 14:27:33" duration="138" activity_count="2176" cpu_count="1463" wait_count="713" most_active="Cpu">
+        <activity class="Cpu">1463</activity>
+        <activity class="Scheduler" event="resmgr:cpu quantum">605</activity>
+        <activity class="User I/O" event="direct path read temp">108</activity>
+      </bucket>
+      <bucket bucket_number="8" start_time="06/21/2009 14:27:34" end_time="06/21/2009 14:29:51" duration="138" activity_count="2176" cpu_count="1451" wait_count="725" most_active="Cpu">
+        <activity class="Cpu">1451</activity>
+        <activity class="Scheduler" event="resmgr:cpu quantum">609</activity>
+        <activity class="User I/O" event="direct path read temp">116</activity>
+      </bucket>
+      <bucket bucket_number="9" start_time="06/21/2009 14:29:52" end_time="06/21/2009 14:32:09" duration="138" activity_count="2176" cpu_count="1474" wait_count="702" most_active="Cpu">
+        <activity class="Cpu">1474</activity>
+        <activity class="Scheduler" event="resmgr:cpu quantum">591</activity>
+        <activity class="User I/O" event="direct path read temp">111</activity>
+      </bucket>
+      <bucket bucket_number="10" start_time="06/21/2009 14:32:10" end_time="06/21/2009 14:34:25" duration="136" activity_count="1936" cpu_count="1338" wait_count="598" most_active="Cpu">
+        <activity class="Cpu">1338</activity>
+        <activity class="Scheduler" event="resmgr:cpu quantum">485</activity>
+        <activity class="User I/O" event="direct path read temp">113</activity>
+      </bucket>
+    </activity_histogram>
+  </activity_sampled>
+  <parallel_info qc_instance_id="1" qc_session_id="969" dop="16" inst_count="1" server_group_count="1" server_set_count="2">
+    <sessions max_activity_count="1005" max_cpu_count="796" max_wait_count="259" max_io_count="364157" max_buffer_gets="157136" max_elapsed_time="1036206073">
+      <session inst_id="1" process_name="PX Coordinator" session_id="969" session_serial="2381">
+        <stats type="monitor">
+          <stat name="elapsed_time">4037613</stat>
+          <stat name="cpu_time">61991</stat>
+          <stat name="application_wait_time">398</stat>
+          <stat name="other_wait_time">3975224</stat>
+          <stat name="user_fetch_count">1</stat>
+          <stat name="buffer_gets">16</stat>
+        </stats>
+        <activity_sampled start_time="06/21/2009 14:18:14" end_time="06/21/2009 14:34:25" duration="972" activity_count="2" cpu_count="0" wait_count="2">
+          <activity class="Scheduler" event="resmgr:cpu quantum">2</activity>
+        </activity_sampled>
+      </session>
+      <session inst_id="1" process_name="p000" session_id="1034" session_serial="5781" server_group="1" server_set="1" server_num="1">
+        <stats type="monitor">
+          <stat name="elapsed_time">1018829037</stat>
+          <stat name="cpu_time">383534694</stat>
+          <stat name="user_io_wait_time">44352538</stat>
+          <stat name="concurrency_wait_time">3354790</stat>
+          <stat name="other_wait_time">587587015</stat>
+          <stat name="buffer_gets">1568</stat>
+          <stat name="disk_reads">181722</stat>
+          <stat name="direct_writes">181691</stat>
+        </stats>
+        <activity_sampled start_time="06/21/2009 14:11:35" end_time="06/21/2009 14:34:25" duration="1371" activity_count="997" cpu_count="738" wait_count="259">
+          <activity class="Concurrency" event="buffer busy waits">3</activity>
+          <activity class="Cpu">738</activity>
+          <activity class="Scheduler" event="resmgr:cpu quantum">206</activity>
+          <activity class="User I/O" event="direct path read temp">37</activity>
+          <activity class="User I/O" event="direct path write temp">2</activity>
+          <activity class="User I/O" event="local write wait">11</activity>
+        </activity_sampled>
+      </session>
+      <session inst_id="1" process_name="p001" session_id="987" session_serial="18899" server_group="1" server_set="1" server_num="2">
+        <stats type="monitor">
+          <stat name="elapsed_time">965648833</stat>
+          <stat name="cpu_time">379886248</stat>
+          <stat name="user_io_wait_time">44165003</stat>
+          <stat name="concurrency_wait_time">3630207</stat>
+          <stat name="cluster_wait_time">886</stat>
+          <stat name="other_wait_time">537966489</stat>
+          <stat name="buffer_gets">1524</stat>
+          <stat name="disk_reads">181320</stat>
+          <stat name="direct_writes">181288</stat>
+        </stats>
+        <activity_sampled start_time="06/21/2009 14:11:41" end_time="06/21/2009 14:34:25" duration="1365" activity_count="949" cpu_count="728" wait_count="221">
+          <activity class="Concurrency" event="buffer busy waits">2</activity>
+          <activity class="Cpu">728</activity>
+          <activity class="Scheduler" event="resmgr:cpu quantum">178</activity>
+          <activity class="User I/O" event="direct path read temp">34</activity>
+          <activity class="User I/O" event="direct path write temp">1</activity>
+          <activity class="User I/O" event="local write wait">6</activity>
+        </activity_sampled>
+      </session>
+      <session inst_id="1" process_name="p002" session_id="1064" session_serial="2691" server_group="1" server_set="1" server_num="3">
+        <stats type="monitor">
+          <stat name="elapsed_time">995302593</stat>
+          <stat name="cpu_time">381809956</stat>
+          <stat name="user_io_wait_time">45203933</stat>
+          <stat name="concurrency_wait_time">3650014</stat>
+          <stat name="other_wait_time">564638690</stat>
+          <stat name="buffer_gets">1594</stat>
+          <stat name="disk_reads">181691</stat>
+          <stat name="direct_writes">181660</stat>
+        </stats>
+        <activity_sampled start_time="06/21/2009 14:11:34" end_time="06/21/2009 14:34:25" duration="1372" activity_count="977" cpu_count="723" wait_count="254">
+          <activity class="Concurrency" event="buffer busy waits">4</activity>
+          <activity class="Cpu">723</activity>
+          <activity class="Other" event="latch free">1</activity>
+          <activity class="Scheduler" event="resmgr:cpu quantum">192</activity>
+          <activity class="User I/O" event="direct path read temp">36</activity>
+          <activity class="User I/O" event="direct path write temp">2</activity>
+          <activity class="User I/O" event="local write wait">19</activity>
+        </activity_sampled>
+      </session>
+      <session inst_id="1" process_name="p003" session_id="1074" session_serial="56780" server_group="1" server_set="1" server_num="4">
+        <stats type="monitor">
+          <stat name="elapsed_time">995457996</stat>
+          <stat name="cpu_time">378590445</stat>
+          <stat name="user_io_wait_time">43417522</stat>
+          <stat name="concurrency_wait_time">3606334</stat>
+          <stat name="other_wait_time">569843695</stat>
+          <stat name="buffer_gets">1554</stat>
+          <stat name="disk_reads">181571</stat>
+          <stat name="direct_writes">181536</stat>
+        </stats>
+        <activity_sampled start_time="06/21/2009 14:11:38" end_time="06/21/2009 14:34:25" duration="1368" activity_count="983" cpu_count="739" wait_count="244">
+          <activity class="Concurrency" event="buffer busy waits">7</activity>
+          <activity class="Cpu">739</activity>
+          <activity class="Scheduler" event="resmgr:cpu quantum">192</activity>
+          <activity class="User I/O" event="direct path read temp">30</activity>
+          <activity class="User I/O" event="direct path write temp">3</activity>
+          <activity class="User I/O" event="local write wait">12</activity>
+        </activity_sampled>
+      </session>
+      <session inst_id="1" process_name="p004" session_id="1045" session_serial="58898" server_group="1" server_set="1" server_num="5">
+        <stats type="monitor">
+          <stat name="elapsed_time">1003796942</stat>
+          <stat name="cpu_time">378085522</stat>
+          <stat name="user_io_wait_time">45031399</stat>
+          <stat name="concurrency_wait_time">3514996</stat>
+          <stat name="cluster_wait_time">321</stat>
+          <stat name="other_wait_time">577164704</stat>
+          <stat name="buffer_gets">1566</stat>
+          <stat name="disk_reads">181755</stat>
+          <stat name="direct_writes">181722</stat>
+        </stats>
+        <activity_sampled start_time="06/21/2009 14:11:33" end_time="06/21/2009 14:34:25" duration="1373" activity_count="993" cpu_count="770" wait_count="223">
+          <activity class="Concurrency" event="buffer busy waits">9</activity>
+          <activity class="Cpu">770</activity>
+          <activity class="Scheduler" event="resmgr:cpu quantum">166</activity>
+          <activity class="User I/O" event="cell single block physical read">1</activity>
+          <activity class="User I/O" event="direct path read temp">31</activity>
+          <activity class="User I/O" event="direct path write temp">4</activity>
+          <activity class="User I/O" event="local write wait">12</activity>
+        </activity_sampled>
+      </session>
+      <session inst_id="1" process_name="p005" session_id="998" session_serial="8596" server_group="1" server_set="1" server_num="6">
+        <stats type="monitor">
+          <stat name="elapsed_time">992150232</stat>
+          <stat name="cpu_time">382507850</stat>
+          <stat name="user_io_wait_time">43013598</stat>
+          <stat name="concurrency_wait_time">3389987</stat>
+          <stat name="other_wait_time">563238797</stat>
+          <stat name="buffer_gets">1578</stat>
+          <stat name="disk_reads">181474</stat>
+          <stat name="direct_writes">181443</stat>
+        </stats>
+        <activity_sampled start_time="06/21/2009 14:11:33" end_time="06/21/2009 14:34:25" duration="1373" activity_count="957" cpu_count="754" wait_count="203">
+          <activity class="Concurrency" event="buffer busy waits">5</activity>
+          <activity class="Cpu">754</activity>
+          <activity class="Scheduler" event="resmgr:cpu quantum">152</activity>
+          <activity class="User I/O" event="direct path read temp">34</activity>
+          <activity class="User I/O" event="direct path write temp">1</activity>
+          <activity class="User I/O" event="local write wait">11</activity>
+        </activity_sampled>
+      </session>
+      <session inst_id="1" process_name="p006" session_id="993" session_serial="7449" server_group="1" server_set="1" server_num="7">
+        <stats type="monitor">
+          <stat name="elapsed_time">983987446</stat>
+          <stat name="cpu_time">377554602</stat>
+          <stat name="user_io_wait_time">44205928</stat>
+          <stat name="concurrency_wait_time">3668608</stat>
+          <stat name="other_wait_time">558558308</stat>
+          <stat name="buffer_gets">1606</stat>
+          <stat name="disk_reads">180854</stat>
+          <stat name="direct_writes">180823</stat>
+        </stats>
+        <activity_sampled start_time="06/21/2009 14:11:32" end_time="06/21/2009 14:34:25" duration="1374" activity_count="969" cpu_count="714" wait_count="255">
+          <activity class="Concurrency" event="buffer busy waits">5</activity>
+          <activity class="Cpu">714</activity>
+          <activity class="Scheduler" event="resmgr:cpu quantum">202</activity>
+          <activity class="User I/O" event="direct path read temp">39</activity>
+          <activity class="User I/O" event="local write wait">9</activity>
+        </activity_sampled>
+      </session>
+      <session inst_id="1" process_name="p007" session_id="950" session_serial="22595" server_group="1" server_set="1" server_num="8">
+        <stats type="monitor">
+          <stat name="elapsed_time">981530707</stat>
+          <stat name="cpu_time">392522327</stat>
+          <stat name="user_io_wait_time">45765780</stat>
+          <stat name="concurrency_wait_time">4083429</stat>
+          <stat name="other_wait_time">539159171</stat>
+          <stat name="buffer_gets">1592</stat>
+          <stat name="disk_reads">181475</stat>
+          <stat name="direct_writes">181443</stat>
+        </stats>
+        <activity_sampled start_time="06/21/2009 14:11:42" end_time="06/21/2009 14:34:25" duration="1364" activity_count="966" cpu_count="741" wait_count="225">
+          <activity class="Concurrency" event="buffer busy waits">4</activity>
+          <activity class="Cpu">741</activity>
+          <activity class="Other" event="latch free">1</activity>
+          <activity class="Scheduler" event="resmgr:cpu quantum">165</activity>
+          <activity class="User I/O" event="direct path read temp">39</activity>
+          <activity class="User I/O" event="direct path write temp">1</activity>
+          <activity class="User I/O" event="local write wait">15</activity>
+        </activity_sampled>
+      </session>
+      <session inst_id="1" process_name="p008" session_id="1009" session_serial="26252" server_group="1" server_set="1" server_num="9">
+        <stats type="monitor">
+          <stat name="elapsed_time">998076227</stat>
+          <stat name="cpu_time">386850189</stat>
+          <stat name="user_io_wait_time">43355621</stat>
+          <stat name="concurrency_wait_time">2893977</stat>
+          <stat name="other_wait_time">564976440</stat>
+          <stat name="buffer_gets">1548</stat>
+          <stat name="disk_reads">181289</stat>
+          <stat name="direct_writes">181257</stat>
+        </stats>
+        <activity_sampled start_time="06/21/2009 14:11:34" end_time="06/21/2009 14:34:25" duration="1372" activity_count="980" cpu_count="754" wait_count="226">
+          <activity class="Concurrency" event="buffer busy waits">6</activity>
+          <activity class="Cpu">754</activity>
+          <activity class="Scheduler" event="resmgr:cpu quantum">176</activity>
+          <activity class="User I/O" event="direct path read temp">33</activity>
+          <activity class="User I/O" event="direct path write temp">2</activity>
+          <activity class="User I/O" event="local write wait">9</activity>
+        </activity_sampled>
+      </session>
+      <session inst_id="1" process_name="p009" session_id="940" session_serial="46392" server_group="1" server_set="1" server_num="10">
+        <stats type="monitor">
+          <stat name="elapsed_time">956989710</stat>
+          <stat name="cpu_time">380130211</stat>
+          <stat name="user_io_wait_time">42354132</stat>
+          <stat name="concurrency_wait_time">3366736</stat>
+          <stat name="cluster_wait_time">242</stat>
+          <stat name="other_wait_time">531138389</stat>
+          <stat name="buffer_gets">1548</stat>
+          <stat name="disk_reads">181289</stat>
+          <stat name="direct_writes">181257</stat>
+        </stats>
+        <activity_sampled start_time="06/21/2009 14:11:32" end_time="06/21/2009 14:34:25" duration="1374" activity_count="937" cpu_count="694" wait_count="243">
+          <activity class="Concurrency" event="buffer busy waits">3</activity>
+          <activity class="Cpu">694</activity>
+          <activity class="Scheduler" event="resmgr:cpu quantum">192</activity>
+          <activity class="User I/O" event="direct path read temp">37</activity>
+          <activity class="User I/O" event="direct path write temp">3</activity>
+          <activity class="User I/O" event="local write wait">8</activity>
+        </activity_sampled>
+      </session>
+      <session inst_id="1" process_name="p010" session_id="1007" session_serial="17159" server_group="1" server_set="1" server_num="11">
+        <stats type="monitor">
+          <stat name="elapsed_time">1007353972</stat>
+          <stat name="cpu_time">393736143</stat>
+          <stat name="user_io_wait_time">45619928</stat>
+          <stat name="concurrency_wait_time">4373290</stat>
+          <stat name="other_wait_time">563624611</stat>
+          <stat name="buffer_gets">1534</stat>
+          <stat name="disk_reads">182034</stat>
+          <stat name="direct_writes">182001</stat>
+        </stats>
+        <activity_sampled start_time="06/21/2009 14:11:42" end_time="06/21/2009 14:34:20" duration="1359" activity_count="993" cpu_count="774" wait_count="219">
+          <activity class="Concurrency" event="buffer busy waits">3</activity>
+          <activity class="Cpu">774</activity>
+          <activity class="Scheduler" event="resmgr:cpu quantum">164</activity>
+          <activity class="User I/O" event="direct path read temp">43</activity>
+          <activity class="User I/O" event="direct path write temp">1</activity>
+          <activity class="User I/O" event="local write wait">8</activity>
+        </activity_sampled>
+      </session>
+      <session inst_id="1" process_name="p011" session_id="1083" session_serial="21714" server_group="1" server_set="1" server_num="12">
+        <stats type="monitor">
+          <stat name="elapsed_time">1019980058</stat>
+          <stat name="cpu_time">381820955</stat>
+          <stat name="user_io_wait_time">43458727</stat>
+          <stat name="concurrency_wait_time">3583854</stat>
+          <stat name="cluster_wait_time">321</stat>
+          <stat name="other_wait_time">591116201</stat>
+          <stat name="buffer_gets">1548</stat>
+          <stat name="disk_reads">181257</stat>
+          <stat name="direct_writes">181226</stat>
+        </stats>
+        <activity_sampled start_time="06/21/2009 14:11:33" end_time="06/21/2009 14:34:25" duration="1373" activity_count="1005" cpu_count="767" wait_count="238">
+          <activity class="Concurrency" event="buffer busy waits">3</activity>
+          <activity class="Cpu">767</activity>
+          <activity class="Scheduler" event="resmgr:cpu quantum">181</activity>
+          <activity class="User I/O" event="direct path read temp">38</activity>
+          <activity class="User I/O" event="direct path write temp">4</activity>
+          <activity class="User I/O" event="local write wait">12</activity>
+        </activity_sampled>
+      </session>
+      <session inst_id="1" process_name="p012" session_id="986" session_serial="10366" server_group="1" server_set="1" server_num="13">
+        <stats type="monitor">
+          <stat name="elapsed_time">1036206073</stat>
+          <stat name="cpu_time">393021251</stat>
+          <stat name="user_io_wait_time">44007643</stat>
+          <stat name="concurrency_wait_time">4333851</stat>
+          <stat name="other_wait_time">594843328</stat>
+          <stat name="buffer_gets">1560</stat>
+          <stat name="disk_reads">181568</stat>
+          <stat name="direct_writes">181536</stat>
+        </stats>
+        <activity_sampled start_time="06/21/2009 14:11:32" end_time="06/21/2009 14:34:25" duration="1374" activity_count="1002" cpu_count="796" wait_count="206">
+          <activity class="Concurrency" event="buffer busy waits">6</activity>
+          <activity class="Cpu">796</activity>
+          <activity class="Other" event="latch free">1</activity>
+          <activity class="Scheduler" event="resmgr:cpu quantum">156</activity>
+          <activity class="User I/O" event="direct path read temp">35</activity>
+          <activity class="User I/O" event="direct path write temp">2</activity>
+          <activity class="User I/O" event="local write wait">6</activity>
+        </activity_sampled>
+      </session>
+      <session inst_id="1" process_name="p013" session_id="1067" session_serial="1070" server_group="1" server_set="1" server_num="14">
+        <stats type="monitor">
+          <stat name="elapsed_time">1017926579</stat>
+          <stat name="cpu_time">401873906</stat>
+          <stat name="user_io_wait_time">45848828</stat>
+          <stat name="concurrency_wait_time">4143491</stat>
+          <stat name="cluster_wait_time">252</stat>
+          <stat name="other_wait_time">566060102</stat>
+          <stat name="buffer_gets">1548</stat>
+          <stat name="disk_reads">182094</stat>
+          <stat name="direct_writes">182063</stat>
+        </stats>
+        <activity_sampled start_time="06/21/2009 14:11:31" end_time="06/21/2009 14:34:25" duration="1375" activity_count="1005" cpu_count="772" wait_count="233">
+          <activity class="Concurrency" event="buffer busy waits">7</activity>
+          <activity class="Cpu">772</activity>
+          <activity class="Scheduler" event="resmgr:cpu quantum">172</activity>
+          <activity class="User I/O" event="direct path read temp">37</activity>
+          <activity class="User I/O" event="direct path write temp">2</activity>
+          <activity class="User I/O" event="local write wait">15</activity>
+        </activity_sampled>
+      </session>
+      <session inst_id="1" process_name="p014" session_id="1039" session_serial="2199" server_group="1" server_set="1" server_num="15">
+        <stats type="monitor">
+          <stat name="elapsed_time">989515707</stat>
+          <stat name="cpu_time">377977538</stat>
+          <stat name="user_io_wait_time">45216470</stat>
+          <stat name="concurrency_wait_time">2870579</stat>
+          <stat name="cluster_wait_time">117518</stat>
+          <stat name="other_wait_time">563333602</stat>
+          <stat name="buffer_gets">1562</stat>
+          <stat name="disk_reads">181691</stat>
+          <stat name="direct_writes">181660</stat>
+        </stats>
+        <activity_sampled start_time="06/21/2009 14:11:31" end_time="06/21/2009 14:34:25" duration="1375" activity_count="957" cpu_count="727" wait_count="230">
+          <activity class="Concurrency" event="buffer busy waits">3</activity>
+          <activity class="Cpu">727</activity>
+          <activity class="Scheduler" event="resmgr:cpu quantum">179</activity>
+          <activity class="User I/O" event="direct path read temp">34</activity>
+          <activity class="User I/O" event="direct path write temp">3</activity>
+          <activity class="User I/O" event="local write wait">11</activity>
+        </activity_sampled>
+      </session>
+      <session inst_id="1" process_name="p015" session_id="964" session_serial="44237" server_group="1" server_set="1" server_num="16">
+        <stats type="monitor">
+          <stat name="elapsed_time">971876666</stat>
+          <stat name="cpu_time">391523480</stat>
+          <stat name="user_io_wait_time">41890675</stat>
+          <stat name="concurrency_wait_time">3197821</stat>
+          <stat name="cluster_wait_time">232</stat>
+          <stat name="other_wait_time">535264458</stat>
+          <stat name="buffer_gets">1544</stat>
+          <stat name="disk_reads">181722</stat>
+          <stat name="direct_writes">181691</stat>
+        </stats>
+        <activity_sampled start_time="06/21/2009 14:11:31" end_time="06/21/2009 14:34:25" duration="1375" activity_count="964" cpu_count="729" wait_count="235">
+          <activity class="Concurrency" event="buffer busy waits">1</activity>
+          <activity class="Cpu">729</activity>
+          <activity class="Scheduler" event="resmgr:cpu quantum">185</activity>
+          <activity class="User I/O" event="direct path read temp">34</activity>
+          <activity class="User I/O" event="direct path write temp">1</activity>
+          <activity class="User I/O" event="local write wait">14</activity>
+        </activity_sampled>
+      </session>
+      <session inst_id="1" process_name="p016" session_id="966" session_serial="421" server_group="1" server_set="2" server_num="1">
+        <stats type="monitor">
+          <stat name="elapsed_time">317980400</stat>
+          <stat name="cpu_time">275092179</stat>
+          <stat name="user_io_wait_time">908533</stat>
+          <stat name="other_wait_time">41979688</stat>
+          <stat name="buffer_gets">145777</stat>
+          <stat name="disk_reads">145049</stat>
+        </stats>
+        <activity_sampled start_time="06/21/2009 14:11:39" end_time="06/21/2009 14:23:02" duration="684" activity_count="290" cpu_count="192" wait_count="98">
+          <activity class="Cpu">192</activity>
+          <activity class="Other" event="PX qref latch">96</activity>
+          <activity class="Scheduler" event="resmgr:cpu quantum">1</activity>
+          <activity class="User I/O" event="cell smart table scan">1</activity>
+        </activity_sampled>
+      </session>
+      <session inst_id="1" process_name="p017" session_id="942" session_serial="697" server_group="1" server_set="2" server_num="2">
+        <stats type="monitor">
+          <stat name="elapsed_time">310876633</stat>
+          <stat name="cpu_time">266951417</stat>
+          <stat name="user_io_wait_time">1010320</stat>
+          <stat name="other_wait_time">42914896</stat>
+          <stat name="buffer_gets">145912</stat>
+          <stat name="disk_reads">145184</stat>
+        </stats>
+        <activity_sampled start_time="06/21/2009 14:11:32" end_time="06/21/2009 14:23:00" duration="689" activity_count="216" cpu_count="150" wait_count="66">
+          <activity class="Cpu">150</activity>
+          <activity class="Other" event="PX qref latch">65</activity>
+          <activity class="Scheduler" event="resmgr:cpu quantum">1</activity>
+        </activity_sampled>
+      </session>
+      <session inst_id="1" process_name="p018" session_id="1019" session_serial="457" server_group="1" server_set="2" server_num="3">
+        <stats type="monitor">
+          <stat name="elapsed_time">294029924</stat>
+          <stat name="cpu_time">255916095</stat>
+          <stat name="user_io_wait_time">1010006</stat>
+          <stat name="concurrency_wait_time">113346</stat>
+          <stat name="other_wait_time">36990477</stat>
+          <stat name="buffer_gets">134688</stat>
+          <stat name="disk_reads">134016</stat>
+        </stats>
+        <activity_sampled start_time="06/21/2009 14:11:32" end_time="06/21/2009 14:22:58" duration="687" activity_count="282" cpu_count="152" wait_count="130">
+          <activity class="Cpu">152</activity>
+          <activity class="Other" event="PX qref latch">129</activity>
+          <activity class="Scheduler" event="resmgr:cpu quantum">1</activity>
+        </activity_sampled>
+      </session>
+      <session inst_id="1" process_name="p019" session_id="1061" session_serial="516" server_group="1" server_set="2" server_num="4">
+        <stats type="monitor">
+          <stat name="elapsed_time">318344747</stat>
+          <stat name="cpu_time">273703392</stat>
+          <stat name="user_io_wait_time">1246892</stat>
+          <stat name="concurrency_wait_time">99513</stat>
+          <stat name="other_wait_time">43294950</stat>
+          <stat name="buffer_gets">151524</stat>
+          <stat name="disk_reads">150768</stat>
+        </stats>
+        <activity_sampled start_time="06/21/2009 14:11:34" end_time="06/21/2009 14:23:03" duration="690" activity_count="307" cpu_count="161" wait_count="146">
+          <activity class="Cpu">161</activity>
+          <activity class="Other" event="PX qref latch">142</activity>
+          <activity class="Other" event="latch free">2</activity>
+          <activity class="User I/O" event="cell smart table scan">2</activity>
+        </activity_sampled>
+      </session>
+      <session inst_id="1" process_name="p020" session_id="952" session_serial="352" server_group="1" server_set="2" server_num="5">
+        <stats type="monitor">
+          <stat name="elapsed_time">296471618</stat>
+          <stat name="cpu_time">257415866</stat>
+          <stat name="user_io_wait_time">1308557</stat>
+          <stat name="concurrency_wait_time">115647</stat>
+          <stat name="other_wait_time">37631548</stat>
+          <stat name="buffer_gets">157136</stat>
+          <stat name="disk_reads">156352</stat>
+        </stats>
+        <activity_sampled start_time="06/21/2009 14:11:33" end_time="06/21/2009 14:23:03" duration="691" activity_count="249" cpu_count="175" wait_count="74">
+          <activity class="Cpu">175</activity>
+          <activity class="Other" event="PX qref latch">71</activity>
+          <activity class="Scheduler" event="resmgr:cpu quantum">1</activity>
+          <activity class="User I/O" event="cell smart table scan">2</activity>
+        </activity_sampled>
+      </session>
+      <session inst_id="1" process_name="p021" session_id="988" session_serial="28480" server_group="1" server_set="2" server_num="6">
+        <stats type="monitor">
+          <stat name="elapsed_time">312938256</stat>
+          <stat name="cpu_time">274383287</stat>
+          <stat name="user_io_wait_time">968768</stat>
+          <stat name="concurrency_wait_time">107600</stat>
+          <stat name="other_wait_time">37478601</stat>
+          <stat name="buffer_gets">151524</stat>
+          <stat name="disk_reads">150768</stat>
+        </stats>
+        <activity_sampled start_time="06/21/2009 14:11:38" end_time="06/21/2009 14:34:25" duration="1368" activity_count="300" cpu_count="172" wait_count="128">
+          <activity class="Cpu">172</activity>
+          <activity class="Other" event="PX qref latch">123</activity>
+          <activity class="Scheduler" event="resmgr:cpu quantum">4</activity>
+          <activity class="User I/O" event="cell smart table scan">1</activity>
+        </activity_sampled>
+      </session>
+      <session inst_id="1" process_name="p022" session_id="1036" session_serial="981" server_group="1" server_set="2" server_num="7">
+        <stats type="monitor">
+          <stat name="elapsed_time">305504764</stat>
+          <stat name="cpu_time">259187597</stat>
+          <stat name="user_io_wait_time">1167151</stat>
+          <stat name="concurrency_wait_time">99469</stat>
+          <stat name="other_wait_time">45050547</stat>
+          <stat name="buffer_gets">145912</stat>
+          <stat name="disk_reads">145184</stat>
+        </stats>
+        <activity_sampled start_time="06/21/2009 14:11:34" end_time="06/21/2009 14:22:58" duration="685" activity_count="285" cpu_count="133" wait_count="152">
+          <activity class="Cpu">133</activity>
+          <activity class="Other" event="PX qref latch">150</activity>
+          <activity class="Scheduler" event="resmgr:cpu quantum">2</activity>
+        </activity_sampled>
+      </session>
+      <session inst_id="1" process_name="p023" session_id="1001" session_serial="16144" server_group="1" server_set="2" server_num="8">
+        <stats type="monitor">
+          <stat name="elapsed_time">311826342</stat>
+          <stat name="cpu_time">269992955</stat>
+          <stat name="user_io_wait_time">1114284</stat>
+          <stat name="concurrency_wait_time">116453</stat>
+          <stat name="other_wait_time">40602650</stat>
+          <stat name="buffer_gets">145912</stat>
+          <stat name="disk_reads">145184</stat>
+        </stats>
+        <activity_sampled start_time="06/21/2009 14:11:31" end_time="06/21/2009 14:23:02" duration="692" activity_count="271" cpu_count="148" wait_count="123">
+          <activity class="Cpu">148</activity>
+          <activity class="Other" event="PX qref latch">121</activity>
+          <activity class="Scheduler" event="resmgr:cpu quantum">2</activity>
+        </activity_sampled>
+      </session>
+      <session inst_id="1" process_name="p024" session_id="982" session_serial="463" server_group="1" server_set="2" server_num="9">
+        <stats type="monitor">
+          <stat name="elapsed_time">314490910</stat>
+          <stat name="cpu_time">269628010</stat>
+          <stat name="user_io_wait_time">1193557</stat>
+          <stat name="concurrency_wait_time">99469</stat>
+          <stat name="other_wait_time">43569874</stat>
+          <stat name="buffer_gets">129076</stat>
+          <stat name="disk_reads">128432</stat>
+        </stats>
+        <activity_sampled start_time="06/21/2009 14:11:31" end_time="06/21/2009 14:22:59" duration="689" activity_count="281" cpu_count="174" wait_count="107">
+          <activity class="Cpu">174</activity>
+          <activity class="Other" event="PX qref latch">103</activity>
+          <activity class="Other" event="latch free">2</activity>
+          <activity class="Scheduler" event="resmgr:cpu quantum">2</activity>
+        </activity_sampled>
+      </session>
+      <session inst_id="1" process_name="p025" session_id="975" session_serial="21252" server_group="1" server_set="2" server_num="10">
+        <stats type="monitor">
+          <stat name="elapsed_time">298560271</stat>
+          <stat name="cpu_time">254217353</stat>
+          <stat name="user_io_wait_time">1034853</stat>
+          <stat name="concurrency_wait_time">223236</stat>
+          <stat name="other_wait_time">43084829</stat>
+          <stat name="buffer_gets">129076</stat>
+          <stat name="disk_reads">128432</stat>
+        </stats>
+        <activity_sampled start_time="06/21/2009 14:11:31" end_time="06/21/2009 14:23:02" duration="692" activity_count="253" cpu_count="143" wait_count="110">
+          <activity class="Cpu">143</activity>
+          <activity class="Other" event="PX qref latch">110</activity>
+        </activity_sampled>
+      </session>
+      <session inst_id="1" process_name="p026" session_id="989" session_serial="1202" server_group="1" server_set="2" server_num="11">
+        <stats type="monitor">
+          <stat name="elapsed_time">298764861</stat>
+          <stat name="cpu_time">255084222</stat>
+          <stat name="user_io_wait_time">1209596</stat>
+          <stat name="concurrency_wait_time">322697</stat>
+          <stat name="other_wait_time">42148346</stat>
+          <stat name="buffer_gets">151524</stat>
+          <stat name="disk_reads">150768</stat>
+        </stats>
+        <activity_sampled start_time="06/21/2009 14:11:33" end_time="06/21/2009 14:23:03" duration="691" activity_count="279" cpu_count="157" wait_count="122">
+          <activity class="Cpu">157</activity>
+          <activity class="Other" event="PX qref latch">122</activity>
+        </activity_sampled>
+      </session>
+      <session inst_id="1" process_name="p027" session_id="956" session_serial="207" server_group="1" server_set="2" server_num="12">
+        <stats type="monitor">
+          <stat name="elapsed_time">308998190</stat>
+          <stat name="cpu_time">268276216</stat>
+          <stat name="user_io_wait_time">1193000</stat>
+          <stat name="other_wait_time">39528974</stat>
+          <stat name="buffer_gets">145912</stat>
+          <stat name="disk_reads">145184</stat>
+        </stats>
+        <activity_sampled start_time="06/21/2009 14:11:32" end_time="06/21/2009 14:22:56" duration="685" activity_count="269" cpu_count="173" wait_count="96">
+          <activity class="Cpu">173</activity>
+          <activity class="Other" event="PX qref latch">91</activity>
+          <activity class="Other" event="latch free">1</activity>
+          <activity class="Scheduler" event="resmgr:cpu quantum">3</activity>
+          <activity class="User I/O" event="cell smart table scan">1</activity>
+        </activity_sampled>
+      </session>
+      <session inst_id="1" process_name="p028" session_id="1026" session_serial="1458" server_group="1" server_set="2" server_num="13">
+        <stats type="monitor">
+          <stat name="elapsed_time">315018295</stat>
+          <stat name="cpu_time">274020342</stat>
+          <stat name="user_io_wait_time">1028679</stat>
+          <stat name="other_wait_time">39969274</stat>
+          <stat name="buffer_gets">157001</stat>
+          <stat name="disk_reads">156217</stat>
+        </stats>
+        <activity_sampled start_time="06/21/2009 14:11:31" end_time="06/21/2009 14:34:25" duration="1375" activity_count="300" cpu_count="168" wait_count="132">
+          <activity class="Cpu">168</activity>
+          <activity class="Other" event="PX qref latch">129</activity>
+          <activity class="Other" event="latch free">1</activity>
+          <activity class="Scheduler" event="resmgr:cpu quantum">2</activity>
+        </activity_sampled>
+      </session>
+      <session inst_id="1" process_name="p029" session_id="937" session_serial="106" server_group="1" server_set="2" server_num="14">
+        <stats type="monitor">
+          <stat name="elapsed_time">323694344</stat>
+          <stat name="cpu_time">287553286</stat>
+          <stat name="user_io_wait_time">860237</stat>
+          <stat name="other_wait_time">35280821</stat>
+          <stat name="buffer_gets">151524</stat>
+          <stat name="disk_reads">150768</stat>
+        </stats>
+        <activity_sampled start_time="06/21/2009 14:11:32" end_time="06/21/2009 14:22:42" duration="671" activity_count="109" cpu_count="50" wait_count="59">
+          <activity class="Cpu">50</activity>
+          <activity class="Other" event="PX qref latch">58</activity>
+          <activity class="Scheduler" event="resmgr:cpu quantum">1</activity>
+        </activity_sampled>
+      </session>
+      <session inst_id="1" process_name="p030" session_id="1030" session_serial="1415" server_group="1" server_set="2" server_num="15">
+        <stats type="monitor">
+          <stat name="elapsed_time">296916570</stat>
+          <stat name="cpu_time">253685434</stat>
+          <stat name="user_io_wait_time">954275</stat>
+          <stat name="concurrency_wait_time">122499</stat>
+          <stat name="other_wait_time">42154362</stat>
+          <stat name="buffer_gets">151524</stat>
+          <stat name="disk_reads">150768</stat>
+        </stats>
+        <activity_sampled start_time="06/21/2009 14:11:34" end_time="06/21/2009 14:23:05" duration="692" activity_count="282" cpu_count="156" wait_count="126">
+          <activity class="Cpu">156</activity>
+          <activity class="Other" event="PX qref latch">125</activity>
+          <activity class="Other" event="latch free">1</activity>
+        </activity_sampled>
+      </session>
+      <session inst_id="1" process_name="p031" session_id="1046" session_serial="4888" server_group="1" server_set="2" server_num="16">
+        <stats type="monitor">
+          <stat name="elapsed_time">307385567</stat>
+          <stat name="cpu_time">261639225</stat>
+          <stat name="user_io_wait_time">1138311</stat>
+          <stat name="concurrency_wait_time">99468</stat>
+          <stat name="other_wait_time">44508563</stat>
+          <stat name="buffer_gets">140300</stat>
+          <stat name="disk_reads">139600</stat>
+        </stats>
+        <activity_sampled start_time="06/21/2009 14:11:33" end_time="06/21/2009 14:23:05" duration="693" activity_count="307" cpu_count="164" wait_count="143">
+          <activity class="Cpu">164</activity>
+          <activity class="Other" event="PX qref latch">139</activity>
+          <activity class="Other" event="latch free">2</activity>
+          <activity class="Scheduler" event="resmgr:cpu quantum">1</activity>
+          <activity class="User I/O" event="cell smart table scan">1</activity>
+        </activity_sampled>
+      </session>
+    </sessions>
+    <instances/>
+  </parallel_info>
+  <plan_monitor max_activity_count="6581" max_cpu_count="5191" max_wait_count="3693">
+    <operation id="0" name="SELECT STATEMENT" depth="0" position="123603" px_type="QC">
+      <partition_start>31</partition_start>
+      <partition_stop>31</partition_stop>
+      <optimizer>
+        <cost>123603</cost>
+      </optimizer>
+      <stats type="plan_monitor">
+        <stat name="first_active">06/21/2009 14:34:24</stat>
+        <stat name="last_active">06/21/2009 14:34:25</stat>
+        <stat name="duration">2</stat>
+        <stat name="from_most_recent">0</stat>
+        <stat name="from_sql_exec_start">1375</stat>
+        <stat name="starts">1</stat>
+        <stat name="cardinality">1</stat>
+      </stats>
+    </operation>
+    <operation id="1" parent_id="0" name="SORT" options="AGGREGATE" depth="1" position="1" px_type="QC">
+      <partition_start>31</partition_start>
+      <partition_stop>31</partition_stop>
+      <optimizer>
+        <cardinality>1</cardinality>
+        <bytes>90</bytes>
+      </optimizer>
+      <stats type="plan_monitor">
+        <stat name="first_active">06/21/2009 14:34:24</stat>
+        <stat name="last_active">06/21/2009 14:34:25</stat>
+        <stat name="duration">2</stat>
+        <stat name="from_most_recent">0</stat>
+        <stat name="from_sql_exec_start">1375</stat>
+        <stat name="starts">1</stat>
+        <stat name="cardinality">1</stat>
+      </stats>
+    </operation>
+    <operation id="2" parent_id="1" name="PX COORDINATOR" depth="2" position="1" px_type="1">
+      <partition_start>31</partition_start>
+      <partition_stop>31</partition_stop>
+      <stats type="plan_monitor">
+        <stat name="first_active">06/21/2009 14:18:14</stat>
+        <stat name="last_active">06/21/2009 14:34:25</stat>
+        <stat name="duration">972</stat>
+        <stat name="from_most_recent">0</stat>
+        <stat name="from_sql_exec_start">405</stat>
+        <stat name="starts">33</stat>
+        <stat name="cardinality">16</stat>
+      </stats>
+      <activity_sampled start_time="06/21/2009 14:18:14" end_time="06/21/2009 14:34:25" duration="972" wait_count="4" cpu_count="1" activity_count="5" most_active="Scheduler">
+        <activity class="Cpu">1</activity>
+        <activity class="Scheduler" event="resmgr:cpu quantum">4</activity>
+        <activity_histogram>
+          <bucket bucket_number="3" wait_count="1" cpu_count="0" activity_count="1" most_active="Scheduler">
+            <activity class="Scheduler" event="resmgr:cpu quantum">1</activity>
+          </bucket>
+          <bucket bucket_number="10" wait_count="3" cpu_count="1" activity_count="4" most_active="Scheduler">
+            <activity class="Cpu">1</activity>
+            <activity class="Scheduler" event="resmgr:cpu quantum">3</activity>
+          </bucket>
+        </activity_histogram>
+      </activity_sampled>
+    </operation>
+    <operation id="3" parent_id="2" name="PX SEND" options="QC (RANDOM)" depth="3" position="1" px_type="1">
+      <object>
+        <owner><![CDATA[SYS]]></owner>
+        <name><![CDATA[:TQ10002]]></name>
+      </object>
+      <partition_start>31</partition_start>
+      <partition_stop>31</partition_stop>
+      <optimizer>
+        <cardinality>1</cardinality>
+        <bytes>90</bytes>
+      </optimizer>
+      <stats type="plan_monitor">
+        <stat name="first_active">06/21/2009 14:34:03</stat>
+        <stat name="last_active">06/21/2009 14:34:25</stat>
+        <stat name="duration">23</stat>
+        <stat name="from_most_recent">0</stat>
+        <stat name="from_sql_exec_start">1354</stat>
+        <stat name="starts">16</stat>
+        <stat name="cardinality">16</stat>
+      </stats>
+    </operation>
+    <operation id="4" parent_id="3" name="SORT" options="AGGREGATE" depth="4" position="1" px_type="1">
+      <partition_start>31</partition_start>
+      <partition_stop>31</partition_stop>
+      <optimizer>
+        <cardinality>1</cardinality>
+        <bytes>90</bytes>
+      </optimizer>
+      <stats type="plan_monitor">
+        <stat name="first_active">06/21/2009 14:12:28</stat>
+        <stat name="last_active">06/21/2009 14:34:24</stat>
+        <stat name="duration">1317</stat>
+        <stat name="from_most_recent">1</stat>
+        <stat name="from_sql_exec_start">59</stat>
+        <stat name="starts">16</stat>
+        <stat name="cardinality">16</stat>
+      </stats>
+      <activity_sampled start_time="06/21/2009 14:12:28" end_time="06/21/2009 14:34:24" duration="1317" wait_count="0" cpu_count="5191" activity_count="5191" most_active="Cpu">
+        <activity class="Cpu">5191</activity>
+        <activity_histogram>
+          <bucket bucket_number="1" wait_count="0" cpu_count="70" activity_count="70" most_active="Cpu">
+            <activity class="Cpu">70</activity>
+          </bucket>
+          <bucket bucket_number="2" wait_count="0" cpu_count="151" activity_count="151" most_active="Cpu">
+            <activity class="Cpu">151</activity>
+          </bucket>
+          <bucket bucket_number="3" wait_count="0" cpu_count="153" activity_count="153" most_active="Cpu">
+            <activity class="Cpu">153</activity>
+          </bucket>
+          <bucket bucket_number="4" wait_count="0" cpu_count="141" activity_count="141" most_active="Cpu">
+            <activity class="Cpu">141</activity>
+          </bucket>
+          <bucket bucket_number="5" wait_count="0" cpu_count="123" activity_count="123" most_active="Cpu">
+            <activity class="Cpu">123</activity>
+          </bucket>
+          <bucket bucket_number="6" wait_count="0" cpu_count="877" activity_count="877" most_active="Cpu">
+            <activity class="Cpu">877</activity>
+          </bucket>
+          <bucket bucket_number="7" wait_count="0" cpu_count="948" activity_count="948" most_active="Cpu">
+            <activity class="Cpu">948</activity>
+          </bucket>
+          <bucket bucket_number="8" wait_count="0" cpu_count="937" activity_count="937" most_active="Cpu">
+            <activity class="Cpu">937</activity>
+          </bucket>
+          <bucket bucket_number="9" wait_count="0" cpu_count="929" activity_count="929" most_active="Cpu">
+            <activity class="Cpu">929</activity>
+          </bucket>
+          <bucket bucket_number="10" wait_count="0" cpu_count="862" activity_count="862" most_active="Cpu">
+            <activity class="Cpu">862</activity>
+          </bucket>
+        </activity_histogram>
+      </activity_sampled>
+    </operation>
+    <operation id="5" parent_id="4" name="HASH JOIN" depth="5" position="1" px_type="1">
+      <partition_start>31</partition_start>
+      <partition_stop>31</partition_stop>
+      <optimizer>
+        <cardinality>3442040034</cardinality>
+        <bytes>309783603060</bytes>
+        <cost>123603</cost>
+        <cpu_cost>40306461702</cpu_cost>
+        <io_cost>121716</io_cost>
+        <time>1484</time>
+      </optimizer>
+      <stats type="plan_monitor">
+        <stat name="first_active">06/21/2009 14:11:31</stat>
+        <stat name="last_active">06/21/2009 14:34:23</stat>
+        <stat name="duration">1373</stat>
+        <stat name="from_most_recent">2</stat>
+        <stat name="from_sql_exec_start">2</stat>
+        <stat name="percent_complete">100</stat>
+        <stat name="time_left">0</stat>
+        <stat name="starts">16</stat>
+        <stat name="cardinality">9878675466</stat>
+        <stat name="max_memory">10078748672</stat>
+        <stat name="max_temp">24604835840</stat>
+      </stats>
+      <activity_sampled start_time="06/21/2009 14:11:31" end_time="06/21/2009 14:34:16" duration="1366" wait_count="3693" cpu_count="2888" activity_count="6581" most_active="Cpu">
+        <activity class="Concurrency" event="buffer busy waits">71</activity>
+        <activity class="Cpu">2888</activity>
+        <activity class="Other" event="latch free">1</activity>
+        <activity class="Scheduler" event="resmgr:cpu quantum">2839</activity>
+        <activity class="User I/O" event="cell single block physical read">1</activity>
+        <activity class="User I/O" event="direct path read temp">571</activity>
+        <activity class="User I/O" event="direct path write temp">32</activity>
+        <activity class="User I/O" event="local write wait">178</activity>
+        <activity_histogram>
+          <bucket bucket_number="1" wait_count="107" cpu_count="107" activity_count="214" most_active="Cpu">
+            <activity class="Concurrency" event="buffer busy waits">21</activity>
+            <activity class="Cpu">107</activity>
+            <activity class="Scheduler" event="resmgr:cpu quantum">3</activity>
+            <activity class="User I/O" event="direct path read temp">39</activity>
+            <activity class="User I/O" event="direct path write temp">23</activity>
+            <activity class="User I/O" event="local write wait">21</activity>
+          </bucket>
+          <bucket bucket_number="2" wait_count="57" cpu_count="48" activity_count="105" most_active="Cpu">
+            <activity class="Concurrency" event="buffer busy waits">16</activity>
+            <activity class="Cpu">48</activity>
+            <activity class="Scheduler" event="resmgr:cpu quantum">1</activity>
+            <activity class="User I/O" event="local write wait">40</activity>
+          </bucket>
+          <bucket bucket_number="3" wait_count="46" cpu_count="48" activity_count="94" most_active="Cpu">
+            <activity class="Concurrency" event="buffer busy waits">6</activity>
+            <activity class="Cpu">48</activity>
+            <activity class="User I/O" event="cell single block physical read">1</activity>
+            <activity class="User I/O" event="direct path write temp">1</activity>
+            <activity class="User I/O" event="local write wait">38</activity>
+          </bucket>
+          <bucket bucket_number="4" wait_count="44" cpu_count="49" activity_count="93" most_active="Cpu">
+            <activity class="Concurrency" event="buffer busy waits">15</activity>
+            <activity class="Cpu">49</activity>
+            <activity class="User I/O" event="local write wait">29</activity>
+          </bucket>
+          <bucket bucket_number="5" wait_count="61" cpu_count="65" activity_count="126" most_active="Cpu">
+            <activity class="Concurrency" event="buffer busy waits">13</activity>
+            <activity class="Cpu">65</activity>
+            <activity class="Scheduler" event="resmgr:cpu quantum">1</activity>
+            <activity class="User I/O" event="local write wait">47</activity>
+          </bucket>
+          <bucket bucket_number="6" wait_count="645" cpu_count="535" activity_count="1180" most_active="Scheduler">
+            <activity class="Cpu">535</activity>
+            <activity class="Other" event="latch free">1</activity>
+            <activity class="Scheduler" event="resmgr:cpu quantum">549</activity>
+            <activity class="User I/O" event="direct path read temp">84</activity>
+            <activity class="User I/O" event="direct path write temp">8</activity>
+            <activity class="User I/O" event="local write wait">3</activity>
+          </bucket>
+          <bucket bucket_number="7" wait_count="713" cpu_count="515" activity_count="1228" most_active="Scheduler">
+            <activity class="Cpu">515</activity>
+            <activity class="Scheduler" event="resmgr:cpu quantum">605</activity>
+            <activity class="User I/O" event="direct path read temp">108</activity>
+          </bucket>
+          <bucket bucket_number="8" wait_count="725" cpu_count="514" activity_count="1239" most_active="Scheduler">
+            <activity class="Cpu">514</activity>
+            <activity class="Scheduler" event="resmgr:cpu quantum">609</activity>
+            <activity class="User I/O" event="direct path read temp">116</activity>
+          </bucket>
+          <bucket bucket_number="9" wait_count="702" cpu_count="545" activity_count="1247" most_active="Scheduler">
+            <activity class="Cpu">545</activity>
+            <activity class="Scheduler" event="resmgr:cpu quantum">591</activity>
+            <activity class="User I/O" event="direct path read temp">111</activity>
+          </bucket>
+          <bucket bucket_number="10" wait_count="593" cpu_count="462" activity_count="1055" most_active="Scheduler">
+            <activity class="Cpu">462</activity>
+            <activity class="Scheduler" event="resmgr:cpu quantum">480</activity>
+            <activity class="User I/O" event="direct path read temp">113</activity>
+          </bucket>
+        </activity_histogram>
+      </activity_sampled>
+    </operation>
+    <operation id="6" parent_id="5" name="PX RECEIVE" depth="6" position="1" px_type="1">
+      <partition_start>31</partition_start>
+      <partition_stop>31</partition_stop>
+      <optimizer>
+        <cardinality>229987842</cardinality>
+        <bytes>10349452890</bytes>
+        <cost>22433</cost>
+        <cpu_cost>6228837388</cpu_cost>
+        <io_cost>22142</io_cost>
+        <time>270</time>
+      </optimizer>
+      <stats type="plan_monitor">
+        <stat name="first_active">06/21/2009 14:11:31</stat>
+        <stat name="last_active">06/21/2009 14:12:26</stat>
+        <stat name="duration">56</stat>
+        <stat name="from_most_recent">1319</stat>
+        <stat name="from_sql_exec_start">2</stat>
+        <stat name="starts">16</stat>
+        <stat name="cardinality">229987842</stat>
+      </stats>
+      <activity_sampled start_time="06/21/2009 14:11:31" end_time="06/21/2009 14:12:23" duration="53" wait_count="0" cpu_count="169" activity_count="169" most_active="Cpu">
+        <activity class="Cpu">169</activity>
+        <activity_histogram>
+          <bucket bucket_number="1" wait_count="0" cpu_count="169" activity_count="169" most_active="Cpu">
+            <activity class="Cpu">169</activity>
+          </bucket>
+        </activity_histogram>
+      </activity_sampled>
+    </operation>
+    <operation id="7" parent_id="6" name="PX SEND" options="HASH" depth="7" position="1" px_type="2">
+      <object>
+        <owner><![CDATA[SYS]]></owner>
+        <name><![CDATA[:TQ10000]]></name>
+      </object>
+      <partition_start>31</partition_start>
+      <partition_stop>31</partition_stop>
+      <optimizer>
+        <cardinality>229987842</cardinality>
+        <bytes>10349452890</bytes>
+        <cost>22433</cost>
+        <cpu_cost>6228837388</cpu_cost>
+        <io_cost>22142</io_cost>
+        <time>270</time>
+      </optimizer>
+      <stats type="plan_monitor">
+        <stat name="first_active">06/21/2009 14:11:31</stat>
+        <stat name="last_active">06/21/2009 14:12:26</stat>
+        <stat name="duration">56</stat>
+        <stat name="from_most_recent">1319</stat>
+        <stat name="from_sql_exec_start">2</stat>
+        <stat name="starts">16</stat>
+        <stat name="cardinality">229987842</stat>
+      </stats>
+      <activity_sampled start_time="06/21/2009 14:11:31" end_time="06/21/2009 14:12:23" duration="53" wait_count="33" cpu_count="148" activity_count="181" most_active="Cpu">
+        <activity class="Cpu">148</activity>
+        <activity class="Other" event="PX qref latch">33</activity>
+        <activity_histogram>
+          <bucket bucket_number="1" wait_count="33" cpu_count="148" activity_count="181" most_active="Cpu">
+            <activity class="Cpu">148</activity>
+            <activity class="Other" event="PX qref latch">33</activity>
+          </bucket>
+        </activity_histogram>
+      </activity_sampled>
+    </operation>
+    <operation id="8" parent_id="7" name="PX BLOCK" options="ITERATOR" depth="8" position="1" px_type="2">
+      <partition_start>31</partition_start>
+      <partition_stop>31</partition_stop>
+      <optimizer>
+        <cardinality>229987842</cardinality>
+        <bytes>10349452890</bytes>
+        <cost>22433</cost>
+        <cpu_cost>6228837388</cpu_cost>
+        <io_cost>22142</io_cost>
+        <time>270</time>
+      </optimizer>
+      <stats type="plan_monitor">
+        <stat name="first_active">06/21/2009 14:11:31</stat>
+        <stat name="last_active">06/21/2009 14:12:26</stat>
+        <stat name="duration">56</stat>
+        <stat name="from_most_recent">1319</stat>
+        <stat name="from_sql_exec_start">2</stat>
+        <stat name="starts">16</stat>
+        <stat name="cardinality">229987842</stat>
+      </stats>
+    </operation>
+    <operation id="9" parent_id="8" name="TABLE ACCESS" depth="9" position="1" px_type="2">
+      <object type="TABLE">
+        <owner><![CDATA[RETAIL]]></owner>
+        <name><![CDATA[DWB_RTL_SLS_RETRN_LINE_ITEM]]></name>
+        <alias><![CDATA[T1@SEL$1]]></alias>
+      </object>
+      <partition_start>31</partition_start>
+      <partition_stop>31</partition_stop>
+      <optimizer>
+        <cardinality>229987842</cardinality>
+        <bytes>10349452890</bytes>
+        <cost>22433</cost>
+        <cpu_cost>6228837388</cpu_cost>
+        <io_cost>22142</io_cost>
+        <time>270</time>
+      </optimizer>
+      <stats type="plan_monitor">
+        <stat name="first_active">06/21/2009 14:11:31</stat>
+        <stat name="last_active">06/21/2009 14:12:26</stat>
+        <stat name="duration">56</stat>
+        <stat name="from_most_recent">1319</stat>
+        <stat name="from_sql_exec_start">2</stat>
+        <stat name="starts">208</stat>
+        <stat name="cardinality">229987842</stat>
+      </stats>
+      <activity_sampled start_time="06/21/2009 14:11:31" end_time="06/21/2009 14:12:23" duration="53" wait_count="4" cpu_count="50" activity_count="54" most_active="Cpu">
+        <activity class="Cpu">50</activity>
+        <activity class="User I/O" event="cell smart table scan">4</activity>
+        <activity_histogram>
+          <bucket bucket_number="1" wait_count="4" cpu_count="50" activity_count="54" most_active="Cpu">
+            <activity class="Cpu">50</activity>
+            <activity class="User I/O" event="cell smart table scan">4</activity>
+          </bucket>
+        </activity_histogram>
+      </activity_sampled>
+    </operation>
+    <operation id="10" parent_id="5" name="PX RECEIVE" depth="6" position="2" px_type="1">
+      <partition_start>31</partition_start>
+      <partition_stop>31</partition_stop>
+      <optimizer>
+        <cardinality>229987842</cardinality>
+        <bytes>10349452890</bytes>
+        <cost>22418</cost>
+        <cpu_cost>5909409829</cpu_cost>
+        <io_cost>22142</io_cost>
+        <time>270</time>
+      </optimizer>
+      <stats type="plan_monitor">
+        <stat name="first_active">06/21/2009 14:12:28</stat>
+        <stat name="last_active">06/21/2009 14:23:08</stat>
+        <stat name="duration">641</stat>
+        <stat name="from_most_recent">677</stat>
+        <stat name="from_sql_exec_start">59</stat>
+        <stat name="starts">16</stat>
+        <stat name="cardinality">229987842</stat>
+      </stats>
+      <activity_sampled start_time="06/21/2009 14:12:28" end_time="06/21/2009 14:23:06" duration="639" wait_count="19" cpu_count="3658" activity_count="3677" most_active="Cpu">
+        <activity class="Cpu">3658</activity>
+        <activity class="Other" event="latch free">2</activity>
+        <activity class="Scheduler" event="resmgr:cpu quantum">17</activity>
+        <activity_histogram>
+          <bucket bucket_number="1" wait_count="4" cpu_count="448" activity_count="452" most_active="Cpu">
+            <activity class="Cpu">448</activity>
+            <activity class="Scheduler" event="resmgr:cpu quantum">4</activity>
+          </bucket>
+          <bucket bucket_number="2" wait_count="6" cpu_count="783" activity_count="789" most_active="Cpu">
+            <activity class="Cpu">783</activity>
+            <activity class="Other" event="latch free">1</activity>
+            <activity class="Scheduler" event="resmgr:cpu quantum">5</activity>
+          </bucket>
+          <bucket bucket_number="3" wait_count="6" cpu_count="783" activity_count="789" most_active="Cpu">
+            <activity class="Cpu">783</activity>
+            <activity class="Other" event="latch free">1</activity>
+            <activity class="Scheduler" event="resmgr:cpu quantum">5</activity>
+          </bucket>
+          <bucket bucket_number="4" wait_count="1" cpu_count="812" activity_count="813" most_active="Cpu">
+            <activity class="Cpu">812</activity>
+            <activity class="Scheduler" event="resmgr:cpu quantum">1</activity>
+          </bucket>
+          <bucket bucket_number="5" wait_count="2" cpu_count="794" activity_count="796" most_active="Cpu">
+            <activity class="Cpu">794</activity>
+            <activity class="Scheduler" event="resmgr:cpu quantum">2</activity>
+          </bucket>
+          <bucket bucket_number="6" wait_count="0" cpu_count="38" activity_count="38" most_active="Cpu">
+            <activity class="Cpu">38</activity>
+          </bucket>
+        </activity_histogram>
+      </activity_sampled>
+    </operation>
+    <operation id="11" parent_id="10" name="PX SEND" options="HASH" depth="7" position="1" px_type="2">
+      <object>
+        <owner><![CDATA[SYS]]></owner>
+        <name><![CDATA[:TQ10001]]></name>
+      </object>
+      <partition_start>31</partition_start>
+      <partition_stop>31</partition_stop>
+      <optimizer>
+        <cardinality>229987842</cardinality>
+        <bytes>10349452890</bytes>
+        <cost>22418</cost>
+        <cpu_cost>5909409829</cpu_cost>
+        <io_cost>22142</io_cost>
+        <time>270</time>
+      </optimizer>
+      <stats type="plan_monitor">
+        <stat name="first_active">06/21/2009 14:12:25</stat>
+        <stat name="last_active">06/21/2009 14:23:06</stat>
+        <stat name="duration">642</stat>
+        <stat name="from_most_recent">679</stat>
+        <stat name="from_sql_exec_start">56</stat>
+        <stat name="starts">16</stat>
+        <stat name="cardinality">229987842</stat>
+      </stats>
+      <activity_sampled start_time="06/21/2009 14:12:28" end_time="06/21/2009 14:23:05" duration="638" wait_count="1769" cpu_count="2236" activity_count="4005" most_active="Cpu">
+        <activity class="Cpu">2236</activity>
+        <activity class="Other" event="PX qref latch">1741</activity>
+        <activity class="Other" event="latch free">9</activity>
+        <activity class="Scheduler" event="resmgr:cpu quantum">19</activity>
+        <activity_histogram>
+          <bucket bucket_number="1" wait_count="250" cpu_count="266" activity_count="516" most_active="Cpu">
+            <activity class="Cpu">266</activity>
+            <activity class="Other" event="PX qref latch">244</activity>
+            <activity class="Other" event="latch free">1</activity>
+            <activity class="Scheduler" event="resmgr:cpu quantum">5</activity>
+          </bucket>
+          <bucket bucket_number="2" wait_count="373" cpu_count="496" activity_count="869" most_active="Cpu">
+            <activity class="Cpu">496</activity>
+            <activity class="Other" event="PX qref latch">367</activity>
+            <activity class="Other" event="latch free">5</activity>
+            <activity class="Scheduler" event="resmgr:cpu quantum">1</activity>
+          </bucket>
+          <bucket bucket_number="3" wait_count="370" cpu_count="470" activity_count="840" most_active="Cpu">
+            <activity class="Cpu">470</activity>
+            <activity class="Other" event="PX qref latch">366</activity>
+            <activity class="Other" event="latch free">1</activity>
+            <activity class="Scheduler" event="resmgr:cpu quantum">3</activity>
+          </bucket>
+          <bucket bucket_number="4" wait_count="374" cpu_count="513" activity_count="887" most_active="Cpu">
+            <activity class="Cpu">513</activity>
+            <activity class="Other" event="PX qref latch">368</activity>
+            <activity class="Other" event="latch free">1</activity>
+            <activity class="Scheduler" event="resmgr:cpu quantum">5</activity>
+          </bucket>
+          <bucket bucket_number="5" wait_count="389" cpu_count="463" activity_count="852" most_active="Cpu">
+            <activity class="Cpu">463</activity>
+            <activity class="Other" event="PX qref latch">383</activity>
+            <activity class="Other" event="latch free">1</activity>
+            <activity class="Scheduler" event="resmgr:cpu quantum">5</activity>
+          </bucket>
+          <bucket bucket_number="6" wait_count="13" cpu_count="28" activity_count="41" most_active="Cpu">
+            <activity class="Cpu">28</activity>
+            <activity class="Other" event="PX qref latch">13</activity>
+          </bucket>
+        </activity_histogram>
+      </activity_sampled>
+    </operation>
+    <operation id="12" parent_id="11" name="PX BLOCK" options="ITERATOR" depth="8" position="1" px_type="2">
+      <partition_start>31</partition_start>
+      <partition_stop>31</partition_stop>
+      <optimizer>
+        <cardinality>229987842</cardinality>
+        <bytes>10349452890</bytes>
+        <cost>22418</cost>
+        <cpu_cost>5909409829</cpu_cost>
+        <io_cost>22142</io_cost>
+        <time>270</time>
+      </optimizer>
+      <stats type="plan_monitor">
+        <stat name="first_active">06/21/2009 14:12:25</stat>
+        <stat name="last_active">06/21/2009 14:23:06</stat>
+        <stat name="duration">642</stat>
+        <stat name="from_most_recent">679</stat>
+        <stat name="from_sql_exec_start">56</stat>
+        <stat name="starts">16</stat>
+        <stat name="cardinality">229987842</stat>
+      </stats>
+    </operation>
+    <operation id="13" parent_id="12" name="TABLE ACCESS" depth="9" position="1" px_type="2">
+      <object type="TABLE">
+        <owner><![CDATA[RETAIL]]></owner>
+        <name><![CDATA[DWB_RTL_SLS_RETRN_LINE_ITEM]]></name>
+        <alias><![CDATA[T2@SEL$1]]></alias>
+      </object>
+      <partition_start>31</partition_start>
+      <partition_stop>31</partition_stop>
+      <optimizer>
+        <cardinality>229987842</cardinality>
+        <bytes>10349452890</bytes>
+        <cost>22418</cost>
+        <cpu_cost>5909409829</cpu_cost>
+        <io_cost>22142</io_cost>
+        <time>270</time>
+      </optimizer>
+      <stats type="plan_monitor">
+        <stat name="first_active">06/21/2009 14:12:25</stat>
+        <stat name="last_active">06/21/2009 14:23:06</stat>
+        <stat name="duration">642</stat>
+        <stat name="from_most_recent">679</stat>
+        <stat name="from_sql_exec_start">56</stat>
+        <stat name="percent_complete">100</stat>
+        <stat name="time_left">0</stat>
+        <stat name="starts">208</stat>
+        <stat name="cardinality">229987842</stat>
+      </stats>
+      <activity_sampled start_time="06/21/2009 14:12:27" end_time="06/21/2009 14:22:14" duration="588" wait_count="4" cpu_count="34" activity_count="38" most_active="Cpu">
+        <activity class="Cpu">34</activity>
+        <activity class="User I/O" event="cell smart table scan">4</activity>
+        <activity_histogram>
+          <bucket bucket_number="1" wait_count="0" cpu_count="6" activity_count="6" most_active="Cpu">
+            <activity class="Cpu">6</activity>
+          </bucket>
+          <bucket bucket_number="2" wait_count="2" cpu_count="5" activity_count="7" most_active="Cpu">
+            <activity class="Cpu">5</activity>
+            <activity class="User I/O" event="cell smart table scan">2</activity>
+          </bucket>
+          <bucket bucket_number="3" wait_count="1" cpu_count="8" activity_count="9" most_active="Cpu">
+            <activity class="Cpu">8</activity>
+            <activity class="User I/O" event="cell smart table scan">1</activity>
+          </bucket>
+          <bucket bucket_number="4" wait_count="0" cpu_count="8" activity_count="8" most_active="Cpu">
+            <activity class="Cpu">8</activity>
+          </bucket>
+          <bucket bucket_number="5" wait_count="1" cpu_count="7" activity_count="8" most_active="Cpu">
+            <activity class="Cpu">7</activity>
+            <activity class="User I/O" event="cell smart table scan">1</activity>
+          </bucket>
+        </activity_histogram>
+      </activity_sampled>
+    </operation>
+  </plan_monitor>
+</sql_monitor_report>
+
+

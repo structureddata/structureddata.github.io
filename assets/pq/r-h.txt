@@ -1,0 +1,64 @@
+select * from (
+select
+  snap_id, instance_number,
+  round((BYTES_SENT     -lag(BYTES_SENT,1)      over (order by instance_number,snap_id))/1024/1024) diff_sent_mb,
+  round((BYTES_RECEIVED -lag(BYTES_RECEIVED,1)  over (order by instance_number,snap_id))/1024/1024) diff_received_mb
+from dba_hist_ic_client_stats
+where name='ipq'
+and snap_id between 1041 and 1048
+order by snap_id,instance_number
+)
+where snap_id in (1042,1044,1046,1048)
+--and DIFF_RECEIVED_MB>10
+/
+
+
+
+   SNAP_ID INSTANCE_NUMBER DIFF_SENT_MB DIFF_RECEIVED_MB
+---------- --------------- ------------ ----------------
+      1042		 1	      8 	       6
+			 2	      2 	       3
+			 3	      2 	       3
+			 4	      2 	       3
+			 5	      2 	       3
+			 6	      2 	       3
+			 7	      2 	       3
+			 8	      2 	       3
+**********		   ------------ ----------------
+sum				     22 	      27
+
+      1044		 1	      7 	       7
+			 2	      3 	       2
+			 3	      2 	       2
+			 4	      2 	       2
+			 5	      2 	       2
+			 6	      2 	       2
+			 7	      2 	       2
+			 8	      2 	       2
+**********		   ------------ ----------------
+sum				     22 	      21
+
+      1046		 1	      1 	       2
+			 2	      1 	       2
+			 3	      1 	       2
+			 4	      3 	       1
+			 5	      1 	       1
+			 6	      1 	       1
+			 7	      1 	       1
+			 8	      1 	       1
+**********		   ------------ ----------------
+sum				     10 	      11
+
+      1048		 1	      6 	       5
+			 2	      1 	       2
+			 3	      3 	       2
+			 4	      1 	       2
+			 5	      1 	       2
+			 6	      1 	       2
+			 7	      1 	       2
+			 8	      1 	       2
+**********		   ------------ ----------------
+sum				     15 	      19
+
+
+32 rows selected.
