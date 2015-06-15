@@ -31,7 +31,7 @@ Not many queries exist where data is only required from two tables. Are Oracle s
 >
 > Thanks & Nice post.
 
-There is a reason that I did not debunk that statement - it did not exist in the original version of Netezza's paper.  It seems they have taken the shopping basket example that I debunked in [my previous post](/2010/08/10/oracle-exadata-and-netezza-twinfin-compared-%E2%80%93-an-engineer%E2%80%99s-analysis/) and replaced it with this one.   Nonetheless lets take a look at Netezza's claim:
+There is a reason that I did not debunk that statement - it did not exist in the original version of Netezza's paper.  It seems they have taken the shopping basket example that I debunked in [my previous post](/2010/08/10/oracle-exadata-and-netezza-twinfin-compared-an-engineers-analysis/) and replaced it with this one.   Nonetheless lets take a look at Netezza's claim:
 
 > Exadata's storage tier provides Bloom filters to implement simple joins between one large and one smaller table, anything more complex cannot be processed in MPP. Analytical queries commonly require joins more complex than those supported by Exadata. Consider the straightforward case of an international retailer needing insight to the dollar value of sales made in stores located in the UK. This simple SQL query requires a join across three tables - sales, currency and stores.
 >
