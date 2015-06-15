@@ -19,22 +19,23 @@ wp_tags:
 A reader recently left a comment for which my reply was longer than I'd like to leave for a comment so I'm answering it in detail with this blog post.
 
 Gabramel writes
+
 > Greg,
 > Nice article. I am just reading the Netezza paper.
-> 
+>
 > You don’t appear to have debunked the following statement.
-> 
+>
 “Exadata is unable to process this three table join in its MPP tier and instead must inefficiently move all the data required by the calculation across the network to Oracle > RAC.”
-> 
+>
 Not many queries exist where data is only required from two tables. Are Oracle suggesting we need to change the way data is structured to enable best use of Exadata – increasing > TCO significantly?
-> 
+>
 > Thanks & Nice post.
 
 There is a reason that I did not debunk that statement - it did not exist in the original version of Netezza's paper.  It seems they have taken the shopping basket example that I debunked in [my previous post](/2010/08/10/oracle-exadata-and-netezza-twinfin-compared-%E2%80%93-an-engineer%E2%80%99s-analysis/) and replaced it with this one.   Nonetheless lets take a look at Netezza's claim:
 
 > Exadata's storage tier provides Bloom filters to implement simple joins between one large and one smaller table, anything more complex cannot be processed in MPP. Analytical queries commonly require joins more complex than those supported by Exadata. Consider the straightforward case of an international retailer needing insight to the dollar value of sales made in stores located in the UK. This simple SQL query requires a join across three tables - sales, currency and stores.
-> 
-> ``` sql 
+>
+> ``` sql
 > select sum(sales_value * exchange_rate) us_dollar_sales
 > from sales, currency, stores
 > where sales.day = currency.day
