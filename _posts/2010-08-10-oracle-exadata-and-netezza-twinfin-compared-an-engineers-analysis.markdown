@@ -62,7 +62,7 @@ While this is a true statement, its intent is clearly to mislead you.  Both of t
 If one were to research table clusters you would find the Oracle Database 11.2 documentation offers the following guidelines ([source](http://download.oracle.com/docs/cd/E11882_01/server.112/e10713/tablecls.htm#CNCPT608)):
 
 > Typically, clustering tables **is not appropriate** in the following situations:
-> 
+>
 >   - The tables are frequently updated.
 >   - The tables frequently require a full table scan.
 >   - The tables require truncating.
@@ -101,7 +101,7 @@ SQL> describe t
  BD                      BINARY_DOUBLE
  D                       DATE
  T                       TIMESTAMP(6)
- S                       VARCHAR2(4000)    
+ S                       VARCHAR2(4000)
 
 SQL> SELECT * FROM t WHERE t = to_timestamp('01-01-2010','DD-MM-YYYY');
 
@@ -144,7 +144,7 @@ Exadata uses at least a 4 MB Automatic Storage Management (ASM) allocation unit 
 Also see [Daniel Abadi](http://dbmsmusings.blogspot.com/2010/08/defending-oracle-exadata.html): 1) Exadata does NOT Enable High Concurrency & 2) Exadata is NOT Intelligent Storage; Exadata is NOT Shared-Nothing
 
 #### Claim: Analytical queries, such as "find all shopping baskets sold last month in Washington State, Oregon and California containing product X with product Y and with a total value more than $35" must retrieve much larger data sets, all of which must be moved from storage to database.
-I find it so ironic that Netezza mentions this type of query as nearly an identical (but more complex) one was used by my group at Oracle OpenWorld 2009 in our [The Terabyte Hour with the Real-World Performance Group](http://structureddata.org/2009/07/20/oracle-openworld-2009-the-real-world-performance-group/) session.  The exact analytical query we ran live for the audience to demonstrate the features of Oracle Exadata and the Oracle Database Machine was, "What were the most popular items in the baskets of shoppers who visited stores in California in the first week of May and did not buy bananas?"
+I find it so ironic that Netezza mentions this type of query as nearly an identical (but more complex) one was used by my group at Oracle OpenWorld 2009 in our [The Terabyte Hour with the Real-World Performance Group](/2009/07/20/oracle-openworld-2009-the-real-world-performance-group/) session.  The exact analytical query we ran live for the audience to demonstrate the features of Oracle Exadata and the Oracle Database Machine was, "What were the most popular items in the baskets of shoppers who visited stores in California in the first week of May and did not buy bananas?"
 
 Let's translate the Netezza analytical question into some tables and SQL to see what the general shape of this query may look like:
 
