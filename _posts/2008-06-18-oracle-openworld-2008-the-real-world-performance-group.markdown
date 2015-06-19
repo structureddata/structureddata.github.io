@@ -13,7 +13,7 @@ wp_tags:
   - oracle real-world performance group
 ---
 
-With [Oracle OpenWorld 2008](http://www.oracle.com/openworld/2008/index.html) only a few months away, I thought I would take a moment to mention that the Real-World Performance Group will again be hosting three sessions.  If you were at the sessions last year, then you probably know how good they were.  If you didn't make it, you can check out [the recap](http://structureddata.org/2007/11/19/the-real-world-performance-group-oracle-openworld-2007-recap/) from last year's sessions.  Hope to see you there!
+With [Oracle OpenWorld 2008](http://www.oracle.com/openworld/2008/index.html) only a few months away, I thought I would take a moment to mention that the Real-World Performance Group will again be hosting three sessions.  If you were at the sessions last year, then you probably know how good they were.  If you didn't make it, you can check out [the recap](/2007/11/19/the-real-world-performance-group-oracle-openworld-2007-recap/) from last year's sessions.  Hope to see you there!
 <table cellpadding="1" width="100%" border="1" >
   <tr >
 

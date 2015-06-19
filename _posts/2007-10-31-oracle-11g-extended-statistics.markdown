@@ -25,11 +25,11 @@ wp_tags:
   - Statistics
 ---
 
-In the [Real-World Performance Roundtable, Part 2: The Optimizer, Schema Statistics, SQL Tuning](http://structureddata.org/presentations) at Oracle OpenWorld 2006, I worked an example of how the optimizer can have difficulty estimating the correct cardinality when there is data correlation. (The Zodiac example can be found on pages 46-49 of the presentation.)  In Oracle 11g, there has been some enhancements to help the optimizer deal with data correlation.
+In the [Real-World Performance Roundtable, Part 2: The Optimizer, Schema Statistics, SQL Tuning](/presentations.html) at Oracle OpenWorld 2006, I worked an example of how the optimizer can have difficulty estimating the correct cardinality when there is data correlation. (The Zodiac example can be found on pages 46-49 of the presentation.)  In Oracle 11g, there has been some enhancements to help the optimizer deal with data correlation.
 
 ### DBMS_STATS.CREATE_EXTENDED_STATS
 
-Previously I blogged about the [11g enhancement to `DBMS_STATS.AUTO_SAMPLE_SIZE`](http://structureddata.org/2007/09/17/oracle-11g-enhancements-to-dbms_stats/) and the new algorithm for gathering NDV.  One of the other enhancements to `DBMS_STATS` is the [`CREATE_EXTENDED_STATS`](http://download.oracle.com/docs/cd/B28359_01/appdev.111/b28419/d_stats.htm#sthref9835) function.  It is this function that will allow us to tell the Optimizer that two or more columns have data that is correlated.
+Previously I blogged about the [11g enhancement to `DBMS_STATS.AUTO_SAMPLE_SIZE`](/2007/09/17/oracle-11g-enhancements-to-dbms_stats/) and the new algorithm for gathering NDV.  One of the other enhancements to `DBMS_STATS` is the [`CREATE_EXTENDED_STATS`](http://download.oracle.com/docs/cd/B28359_01/appdev.111/b28419/d_stats.htm#sthref9835) function.  It is this function that will allow us to tell the Optimizer that two or more columns have data that is correlated.
 
 ### Zodiac Calendar Example
 

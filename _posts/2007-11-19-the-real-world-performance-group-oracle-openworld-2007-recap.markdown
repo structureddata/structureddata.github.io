@@ -29,7 +29,7 @@ Many thanks to both Doug and Andrew for the nice write-ups and the kind words, a
 
 ### Presentations
 
-The presentations from the Real-World Performance Group are available for download from the [presentations page](http://structureddata.org/presentations/) as well as the links below.  The username/password is cboracle/oraclec6.
+The presentations from the Real-World Performance Group are available for download from the [presentations page](/presentations.html) as well as the links below.  The username/password is cboracle/oraclec6.
 
 - S291301: [Current Trends in Database Performance](http://www28.cplan.com/cbo_export/PS_S291301_291301_176-1_FIN_v1.pdf)
 - S291304: [When to Use the Appropriate Database Technology](http://www28.cplan.com/cbo_export/PS_S291304_291304_176-1_FIN_v1.pdf)

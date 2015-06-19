@@ -101,8 +101,8 @@ There are several common scenarios that can lead to inaccurate cardinality estim
 
 Some possible solutions to these issues are:
 
-- **Data skew**: _Choose a sample size that yields accurate NDV.  Use [`DBMS_STATS.AUTO_SAMPLE_SIZE` in 11g](http://structureddata.org/2007/09/17/oracle-11g-enhancements-to-dbms_stats/)._
-- **Data correlation**: _Use [Extended Stats in 11g](http://structureddata.org/2007/10/31/oracle-11g-extended-statistics/).  If <= 10.2.0.3 use a `CARDINALITY` hint if possible._
+- **Data skew**: _Choose a sample size that yields accurate NDV.  Use [`DBMS_STATS.AUTO_SAMPLE_SIZE` in 11g](/2007/09/17/oracle-11g-enhancements-to-dbms_stats/)._
+- **Data correlation**: _Use [Extended Stats in 11g](/2007/10/31/oracle-11g-extended-statistics/).  If <= 10.2.0.3 use a `CARDINALITY` hint if possible._
 - **Out-of-range values**: _Gather or manually set the statistics._
 - **Use of functions in predicates**: _Use a `CARDINALITY` hint where possible._
 - **Stats gathering strategies**: _Use `AUTO_SAMPLE_SIZE`.  Adjust only where necessary.  Be mindful of tables with skewed data._

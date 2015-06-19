@@ -18,7 +18,7 @@ wp_tags:
   - Vertica
 ---
 
-After posting about how ridiculous some of the [benchmarketing claims](http://structureddata.org/2008/12/12/database-customer-benchmarketing-reports/) that database vendors are making, Dave Menninger, VP of Marketing & Product Management at Vertica [posted a comment](http://structureddata.org/2008/12/12/database-customer-benchmarketing-reports/#comment-5401) that one of their customers reported a 40,400x gain in one query (this of course is after I openly joked about the 16,200x Vertica claim).  So I made my way over to check out this claim, and sure enough, someone reported this.  Here is the table presented in the webcast:
+After posting about how ridiculous some of the [benchmarketing claims](/2008/12/12/database-customer-benchmarketing-reports/) that database vendors are making, Dave Menninger, VP of Marketing & Product Management at Vertica [posted a comment](/2008/12/12/database-customer-benchmarketing-reports/#comment-5401) that one of their customers reported a 40,400x gain in one query (this of course is after I openly joked about the 16,200x Vertica claim).  So I made my way over to check out this claim, and sure enough, someone reported this.  Here is the table presented in the webcast:
 
 ![hMetrix_Vertica.png](/assets/hmetrix-vertica1.png)
 

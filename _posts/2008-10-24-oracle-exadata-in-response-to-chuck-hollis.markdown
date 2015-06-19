@@ -188,7 +188,7 @@ If you look at the number for Sizing By Capacity, you can see that for the given
 
 When it comes to delivering I/O bandwidth, Exadata clearly stands out.  Targeting a scan rate of 3 GB/s, Exadata delivers this using only 36 drives, just 3 Exadata Storage Servers.  If one wanted to deliver this scan rate with the CX4 it would take 2.5X as many drives (90 vs. 36) using 2+1 RAID 5.
 
-So are storage arrays the bottleneck?  You can draw your own conclusions, but I think the numbers speak to the performance advantage with Oracle Exadata when it comes to delivering I/O bandwidth and fast scan rates.  Consider this:  What would the storage topology look like if you wanted to [deliver a scan rate of 74 GB/s](http://structureddata.org/2008/09/28/oracle-exadata-storage-server-and-the-hp-oracle-database-machine/) as we did for Oracle OpenWorld with 84 HP Oracle Exadata Storage Servers (6 HP Oracle Database Machines)?  Honestly I would struggle to think where I would put the 185 or so 4Gb HBAs to achieve that.
+So are storage arrays the bottleneck?  You can draw your own conclusions, but I think the numbers speak to the performance advantage with Oracle Exadata when it comes to delivering I/O bandwidth and fast scan rates.  Consider this:  What would the storage topology look like if you wanted to [deliver a scan rate of 74 GB/s](/2008/09/28/oracle-exadata-storage-server-and-the-hp-oracle-database-machine/) as we did for Oracle OpenWorld with 84 HP Oracle Exadata Storage Servers (6 HP Oracle Database Machines)?  Honestly I would struggle to think where I would put the 185 or so 4Gb HBAs to achieve that.
 
 ### Space Saving RAID or Wasteful Mirroring
 

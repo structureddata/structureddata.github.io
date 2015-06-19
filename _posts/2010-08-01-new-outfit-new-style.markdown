@@ -12,4 +12,4 @@ Back on June 17th [WordPress 3.0 "Thelonious"](http://wordpress.org/news/2010/06
 
 Here is a capture of the previous version just in case you don't recall what it looked like (click for full size).
 
-[![](/assets/structureddatacrop1.png)](http://structureddata.org/wp-content/uploads/2010/08/StructuredDataCrop.png)
+[![](/assets/structureddatacrop1.png)](/assets/structureddatacrop1.png)
