@@ -8,6 +8,7 @@ author: Greg Rahn
 #
 twitter_username: gregrahn
 github_username:  gregrahn
+permalink: /:year/:month/:day/:title/
 
 # Minima date format
 # refer to http://shopify.github.io/liquid/filters/date/ if you want to customize this
