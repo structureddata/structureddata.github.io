@@ -1,0 +1,51 @@
+a6r9zzu06tudh
+2586167546
+old   1: select /* &&1 */
+new   1: select /* one */
+
+MIN(T1.BSNS_UNIT_KEY+T2.BSNS_UNIT_KEY) MAX(T1.DAY_KEY+T2.DAY_KEY) AVG(T1.DAY_KEY+T2.DAY_KEY) MAX(T1.BSNS_UNIT_TYP_CD)	    M MAX(T1.LO
+-------------------------------------- -------------------------- -------------------------- ------------------------------ - ---------
+			       4214454			 40181062		    40181032 STORE			    Y 01-JUN-09
+
+Elapsed: 00:04:54.12
+awrrpt_1_910_911.html
+--
+54patfpds4pp3
+2586167546
+Enter value for 1: two
+old   1: select /* &&1 */
+new   1: select /* two */
+
+MIN(T1.BSNS_UNIT_KEY+T2.BSNS_UNIT_KEY) MAX(T1.DAY_KEY+T2.DAY_KEY) AVG(T1.DAY_KEY+T2.DAY_KEY) MAX(T1.BSNS_UNIT_TYP_CD)	    M MAX(T1.LO
+-------------------------------------- -------------------------- -------------------------- ------------------------------ - ---------
+			       4214454			 40181062		    40181032 STORE			    Y 01-JUN-09
+
+Elapsed: 00:03:55.35
+awrrpt_2_912_913.html
+---
+dgyay259941s4
+Enter value for 1: four
+old   1: select /* &&1 */
+new   1: select /* four */
+
+MIN(T1.BSNS_UNIT_KEY+T2.BSNS_UNIT_KEY) MAX(T1.DAY_KEY+T2.DAY_KEY) AVG(T1.DAY_KEY+T2.DAY_KEY) MAX(T1.BSNS_UNIT_TYP_CD)	    M MAX(T1.LO
+-------------------------------------- -------------------------- -------------------------- ------------------------------ - ---------
+			       4214454			 40181062		    40181032 STORE			    Y 01-JUN-09
+
+Elapsed: 00:02:59.24
+awrrpt_4_914_915.html
+
+7b1a4ngy9q7kc
+2586167546
+
+Enter value for 1: eight
+old   1: select /* &&1 */
+new   1: select /* eight */
+
+MIN(T1.BSNS_UNIT_KEY+T2.BSNS_UNIT_KEY) MAX(T1.DAY_KEY+T2.DAY_KEY) AVG(T1.DAY_KEY+T2.DAY_KEY) MAX(T1.BSNS_UNIT_TYP_CD)	    M MAX(T1.LO
+-------------------------------------- -------------------------- -------------------------- ------------------------------ - ---------
+			       4214454			 40181062		    40181032 STORE			    Y 01-JUN-09
+
+Elapsed: 00:02:14.39
+
+PL/SQL procedure successfully completed.

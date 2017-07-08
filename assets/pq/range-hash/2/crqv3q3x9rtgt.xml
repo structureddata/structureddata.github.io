@@ -1,0 +1,682 @@
+<sql_monitor_report>
+  <report_parameters>
+    <sql_id>crqv3q3x9rtgt</sql_id>
+    <bucket_count>2</bucket_count>
+    <interval_start>07/02/2009 12:57:23</interval_start>
+    <interval_end>07/02/2009 12:59:03</interval_end>
+  </report_parameters>
+  <target instance_id="2" session_id="1007" session_serial="31102" sql_id="crqv3q3x9rtgt" sql_exec_start="07/02/2009 12:57:24" sql_exec_id="33554432" sql_plan_hash="1755470101">
+    <sql_fulltext><![CDATA[select /* two */
+       /*+ parallel (t1, 16) parallel (t2, 16) */
+       min (t1.bsns_unit_key + t2.bsns_unit_key),
+       max (t1.day_key + t2.day_key),
+       avg (t1.day_key + t2.day_key),
+       max (t1.bsns_unit_typ_cd),
+       max (t2.curr_ind),
+       max (t1.load_dt)
+from   d31.dwb_rtl_trx t1,
+       d31.dwb_rtl_trx t2
+where  t1.trx_nbr = t2.trx_nbr]]></sql_fulltext>
+    <status>DONE (ALL ROWS)</status>
+    <refresh_count>801</refresh_count>
+    <first_refresh_time>07/02/2009 12:57:24</first_refresh_time>
+    <last_refresh_time>07/02/2009 12:59:02</last_refresh_time>
+    <duration>99</duration>
+  </target>
+  <stats type="monitor">
+    <stat name="elapsed_time">1399178338</stat>
+    <stat name="cpu_time">1150710066</stat>
+    <stat name="user_io_wait_time">199712841</stat>
+    <stat name="application_wait_time">4848</stat>
+    <stat name="other_wait_time">48750583</stat>
+    <stat name="user_fetch_count">1</stat>
+    <stat name="buffer_gets">7638908</stat>
+    <stat name="disk_reads">8194924</stat>
+    <stat name="direct_writes">571888</stat>
+  </stats>
+  <activity_sampled start_time="07/02/2009 12:57:26" end_time="07/02/2009 12:59:02" duration="97" activity_count="1423" wait_count="224" cpu_count="1199" most_active="Cpu">
+    <activity class="Cpu">1199</activity>
+    <activity class="Other" event="PX Deq: Signal ACK RSG">2</activity>
+    <activity class="User I/O" event="cell smart table scan">117</activity>
+    <activity class="User I/O" event="direct path read temp">46</activity>
+    <activity class="User I/O" event="direct path write temp">59</activity>
+    <activity_histogram bucket_count="2">
+      <bucket bucket_number="1" start_time="07/02/2009 12:57:26" end_time="07/02/2009 12:58:13" duration="48" activity_count="768" cpu_count="606" wait_count="162" most_active="Cpu">
+        <activity class="Cpu">606</activity>
+        <activity class="User I/O" event="cell smart table scan">57</activity>
+        <activity class="User I/O" event="direct path read temp">46</activity>
+        <activity class="User I/O" event="direct path write temp">59</activity>
+      </bucket>
+      <bucket bucket_number="2" start_time="07/02/2009 12:58:14" end_time="07/02/2009 12:59:02" duration="49" activity_count="655" cpu_count="593" wait_count="62" most_active="Cpu">
+        <activity class="Cpu">593</activity>
+        <activity class="Other" event="PX Deq: Signal ACK RSG">2</activity>
+        <activity class="User I/O" event="cell smart table scan">60</activity>
+      </bucket>
+    </activity_histogram>
+  </activity_sampled>
+  <parallel_info qc_instance_id="2" qc_session_id="1007" dop="16" inst_count="2" server_group_count="1" server_set_count="1">
+    <sessions max_activity_count="96" max_cpu_count="81" max_wait_count="20" max_io_count="667020" max_buffer_gets="595844" max_elapsed_time="94788690">
+      <session inst_id="2" process_name="PX Coordinator" session_id="1007" session_serial="31102">
+        <stats type="monitor">
+          <stat name="elapsed_time">2378587</stat>
+          <stat name="cpu_time">144978</stat>
+          <stat name="application_wait_time">4848</stat>
+          <stat name="other_wait_time">2228761</stat>
+          <stat name="user_fetch_count">1</stat>
+          <stat name="buffer_gets">11904</stat>
+        </stats>
+        <activity_sampled start_time="07/02/2009 12:59:01" end_time="07/02/2009 12:59:02" duration="2" activity_count="2" cpu_count="0" wait_count="2">
+          <activity class="Other" event="PX Deq: Signal ACK RSG">2</activity>
+        </activity_sampled>
+      </session>
+      <session inst_id="2" process_name="p000" session_id="1023" session_serial="22107" server_group="1" server_set="1" server_num="1">
+        <stats type="monitor">
+          <stat name="elapsed_time">80726180</stat>
+          <stat name="cpu_time">70527278</stat>
+          <stat name="user_io_wait_time">8785392</stat>
+          <stat name="other_wait_time">1413510</stat>
+          <stat name="buffer_gets">357610</stat>
+          <stat name="disk_reads">393167</stat>
+          <stat name="direct_writes">35743</stat>
+        </stats>
+        <activity_sampled start_time="07/02/2009 12:57:26" end_time="07/02/2009 12:59:02" duration="97" activity_count="83" cpu_count="73" wait_count="10">
+          <activity class="Cpu">73</activity>
+          <activity class="User I/O" event="cell smart table scan">3</activity>
+          <activity class="User I/O" event="direct path read temp">4</activity>
+          <activity class="User I/O" event="direct path write temp">3</activity>
+        </activity_sampled>
+      </session>
+      <session inst_id="2" process_name="p001" session_id="1058" session_serial="32644" server_group="1" server_set="1" server_num="2">
+        <stats type="monitor">
+          <stat name="elapsed_time">80869316</stat>
+          <stat name="cpu_time">70925218</stat>
+          <stat name="user_io_wait_time">8797187</stat>
+          <stat name="other_wait_time">1146911</stat>
+          <stat name="buffer_gets">357600</stat>
+          <stat name="disk_reads">393157</stat>
+          <stat name="direct_writes">35743</stat>
+        </stats>
+        <activity_sampled start_time="07/02/2009 12:57:26" end_time="07/02/2009 12:59:02" duration="97" activity_count="83" cpu_count="73" wait_count="10">
+          <activity class="Cpu">73</activity>
+          <activity class="User I/O" event="cell smart table scan">3</activity>
+          <activity class="User I/O" event="direct path read temp">2</activity>
+          <activity class="User I/O" event="direct path write temp">5</activity>
+        </activity_sampled>
+      </session>
+      <session inst_id="2" process_name="p002" session_id="1099" session_serial="16570" server_group="1" server_set="1" server_num="3">
+        <stats type="monitor">
+          <stat name="elapsed_time">80765298</stat>
+          <stat name="cpu_time">70794238</stat>
+          <stat name="user_io_wait_time">8778609</stat>
+          <stat name="other_wait_time">1192451</stat>
+          <stat name="buffer_gets">357572</stat>
+          <stat name="disk_reads">393129</stat>
+          <stat name="direct_writes">35743</stat>
+        </stats>
+        <activity_sampled start_time="07/02/2009 12:57:26" end_time="07/02/2009 12:59:02" duration="97" activity_count="83" cpu_count="70" wait_count="13">
+          <activity class="Cpu">70</activity>
+          <activity class="User I/O" event="cell smart table scan">7</activity>
+          <activity class="User I/O" event="direct path read temp">3</activity>
+          <activity class="User I/O" event="direct path write temp">3</activity>
+        </activity_sampled>
+      </session>
+      <session inst_id="2" process_name="p003" session_id="987" session_serial="15595" server_group="1" server_set="1" server_num="4">
+        <stats type="monitor">
+          <stat name="elapsed_time">81030867</stat>
+          <stat name="cpu_time">70726249</stat>
+          <stat name="user_io_wait_time">8895971</stat>
+          <stat name="other_wait_time">1408647</stat>
+          <stat name="buffer_gets">357570</stat>
+          <stat name="disk_reads">393127</stat>
+          <stat name="direct_writes">35743</stat>
+        </stats>
+        <activity_sampled start_time="07/02/2009 12:57:26" end_time="07/02/2009 12:59:02" duration="97" activity_count="83" cpu_count="71" wait_count="12">
+          <activity class="Cpu">71</activity>
+          <activity class="User I/O" event="cell smart table scan">6</activity>
+          <activity class="User I/O" event="direct path read temp">2</activity>
+          <activity class="User I/O" event="direct path write temp">4</activity>
+        </activity_sampled>
+      </session>
+      <session inst_id="2" process_name="p004" session_id="1026" session_serial="28007" server_group="1" server_set="1" server_num="5">
+        <stats type="monitor">
+          <stat name="elapsed_time">81068411</stat>
+          <stat name="cpu_time">70571271</stat>
+          <stat name="user_io_wait_time">9131678</stat>
+          <stat name="other_wait_time">1365462</stat>
+          <stat name="buffer_gets">357558</stat>
+          <stat name="disk_reads">393115</stat>
+          <stat name="direct_writes">35743</stat>
+        </stats>
+        <activity_sampled start_time="07/02/2009 12:57:26" end_time="07/02/2009 12:59:02" duration="97" activity_count="83" cpu_count="74" wait_count="9">
+          <activity class="Cpu">74</activity>
+          <activity class="User I/O" event="cell smart table scan">4</activity>
+          <activity class="User I/O" event="direct path read temp">1</activity>
+          <activity class="User I/O" event="direct path write temp">4</activity>
+        </activity_sampled>
+      </session>
+      <session inst_id="2" process_name="p005" session_id="1044" session_serial="19487" server_group="1" server_set="1" server_num="6">
+        <stats type="monitor">
+          <stat name="elapsed_time">80323192</stat>
+          <stat name="cpu_time">70390299</stat>
+          <stat name="user_io_wait_time">8756572</stat>
+          <stat name="other_wait_time">1176321</stat>
+          <stat name="buffer_gets">357576</stat>
+          <stat name="disk_reads">393133</stat>
+          <stat name="direct_writes">35743</stat>
+        </stats>
+        <activity_sampled start_time="07/02/2009 12:57:26" end_time="07/02/2009 12:59:02" duration="97" activity_count="82" cpu_count="71" wait_count="11">
+          <activity class="Cpu">71</activity>
+          <activity class="User I/O" event="cell smart table scan">7</activity>
+          <activity class="User I/O" event="direct path write temp">4</activity>
+        </activity_sampled>
+      </session>
+      <session inst_id="2" process_name="p006" session_id="1009" session_serial="8726" server_group="1" server_set="1" server_num="7">
+        <stats type="monitor">
+          <stat name="elapsed_time">81393777</stat>
+          <stat name="cpu_time">71021203</stat>
+          <stat name="user_io_wait_time">8881932</stat>
+          <stat name="other_wait_time">1490642</stat>
+          <stat name="buffer_gets">357550</stat>
+          <stat name="disk_reads">393107</stat>
+          <stat name="direct_writes">35743</stat>
+        </stats>
+        <activity_sampled start_time="07/02/2009 12:57:26" end_time="07/02/2009 12:59:02" duration="97" activity_count="83" cpu_count="74" wait_count="9">
+          <activity class="Cpu">74</activity>
+          <activity class="User I/O" event="cell smart table scan">2</activity>
+          <activity class="User I/O" event="direct path read temp">2</activity>
+          <activity class="User I/O" event="direct path write temp">5</activity>
+        </activity_sampled>
+      </session>
+      <session inst_id="2" process_name="p007" session_id="981" session_serial="20124" server_group="1" server_set="1" server_num="8">
+        <stats type="monitor">
+          <stat name="elapsed_time">80227117</stat>
+          <stat name="cpu_time">70483284</stat>
+          <stat name="user_io_wait_time">8771134</stat>
+          <stat name="other_wait_time">972699</stat>
+          <stat name="buffer_gets">357574</stat>
+          <stat name="disk_reads">393131</stat>
+          <stat name="direct_writes">35743</stat>
+        </stats>
+        <activity_sampled start_time="07/02/2009 12:57:26" end_time="07/02/2009 12:59:02" duration="97" activity_count="82" cpu_count="73" wait_count="9">
+          <activity class="Cpu">73</activity>
+          <activity class="User I/O" event="cell smart table scan">4</activity>
+          <activity class="User I/O" event="direct path read temp">1</activity>
+          <activity class="User I/O" event="direct path write temp">4</activity>
+        </activity_sampled>
+      </session>
+      <session inst_id="1" process_name="p000" session_id="998" session_serial="4005" server_group="1" server_set="1" server_num="9">
+        <stats type="monitor">
+          <stat name="elapsed_time">94694536</stat>
+          <stat name="cpu_time">72653955</stat>
+          <stat name="user_io_wait_time">16640659</stat>
+          <stat name="other_wait_time">5399922</stat>
+          <stat name="buffer_gets">595744</stat>
+          <stat name="disk_reads">631177</stat>
+          <stat name="direct_writes">35743</stat>
+        </stats>
+        <activity_sampled start_time="07/02/2009 12:57:26" end_time="07/02/2009 12:59:01" duration="96" activity_count="96" cpu_count="80" wait_count="16">
+          <activity class="Cpu">80</activity>
+          <activity class="User I/O" event="cell smart table scan">10</activity>
+          <activity class="User I/O" event="direct path read temp">3</activity>
+          <activity class="User I/O" event="direct path write temp">3</activity>
+        </activity_sampled>
+      </session>
+      <session inst_id="1" process_name="p001" session_id="957" session_serial="10759" server_group="1" server_set="1" server_num="10">
+        <stats type="monitor">
+          <stat name="elapsed_time">93413508</stat>
+          <stat name="cpu_time">73310855</stat>
+          <stat name="user_io_wait_time">15781595</stat>
+          <stat name="other_wait_time">4321058</stat>
+          <stat name="buffer_gets">595822</stat>
+          <stat name="disk_reads">631255</stat>
+          <stat name="direct_writes">35743</stat>
+        </stats>
+        <activity_sampled start_time="07/02/2009 12:57:26" end_time="07/02/2009 12:59:01" duration="96" activity_count="95" cpu_count="77" wait_count="18">
+          <activity class="Cpu">77</activity>
+          <activity class="User I/O" event="cell smart table scan">9</activity>
+          <activity class="User I/O" event="direct path read temp">6</activity>
+          <activity class="User I/O" event="direct path write temp">3</activity>
+        </activity_sampled>
+      </session>
+      <session inst_id="1" process_name="p002" session_id="988" session_serial="5663" server_group="1" server_set="1" server_num="11">
+        <stats type="monitor">
+          <stat name="elapsed_time">94016706</stat>
+          <stat name="cpu_time">73391843</stat>
+          <stat name="user_io_wait_time">15696187</stat>
+          <stat name="other_wait_time">4928676</stat>
+          <stat name="buffer_gets">595802</stat>
+          <stat name="disk_reads">631235</stat>
+          <stat name="direct_writes">35743</stat>
+        </stats>
+        <activity_sampled start_time="07/02/2009 12:57:26" end_time="07/02/2009 12:59:01" duration="96" activity_count="95" cpu_count="78" wait_count="17">
+          <activity class="Cpu">78</activity>
+          <activity class="User I/O" event="cell smart table scan">11</activity>
+          <activity class="User I/O" event="direct path read temp">2</activity>
+          <activity class="User I/O" event="direct path write temp">4</activity>
+        </activity_sampled>
+      </session>
+      <session inst_id="1" process_name="p003" session_id="1002" session_serial="6918" server_group="1" server_set="1" server_num="12">
+        <stats type="monitor">
+          <stat name="elapsed_time">92959273</stat>
+          <stat name="cpu_time">73032898</stat>
+          <stat name="user_io_wait_time">16213928</stat>
+          <stat name="other_wait_time">3712447</stat>
+          <stat name="buffer_gets">595844</stat>
+          <stat name="disk_reads">631277</stat>
+          <stat name="direct_writes">35743</stat>
+        </stats>
+        <activity_sampled start_time="07/02/2009 12:57:26" end_time="07/02/2009 12:59:01" duration="96" activity_count="94" cpu_count="78" wait_count="16">
+          <activity class="Cpu">78</activity>
+          <activity class="User I/O" event="cell smart table scan">10</activity>
+          <activity class="User I/O" event="direct path read temp">3</activity>
+          <activity class="User I/O" event="direct path write temp">3</activity>
+        </activity_sampled>
+      </session>
+      <session inst_id="1" process_name="p004" session_id="1049" session_serial="14753" server_group="1" server_set="1" server_num="13">
+        <stats type="monitor">
+          <stat name="elapsed_time">93318232</stat>
+          <stat name="cpu_time">73478829</stat>
+          <stat name="user_io_wait_time">15660177</stat>
+          <stat name="other_wait_time">4179226</stat>
+          <stat name="buffer_gets">595822</stat>
+          <stat name="disk_reads">631255</stat>
+          <stat name="direct_writes">35743</stat>
+        </stats>
+        <activity_sampled start_time="07/02/2009 12:57:26" end_time="07/02/2009 12:59:01" duration="96" activity_count="94" cpu_count="81" wait_count="13">
+          <activity class="Cpu">81</activity>
+          <activity class="User I/O" event="cell smart table scan">7</activity>
+          <activity class="User I/O" event="direct path read temp">3</activity>
+          <activity class="User I/O" event="direct path write temp">3</activity>
+        </activity_sampled>
+      </session>
+      <session inst_id="1" process_name="p005" session_id="1016" session_serial="18883" server_group="1" server_set="1" server_num="14">
+        <stats type="monitor">
+          <stat name="elapsed_time">94788690</stat>
+          <stat name="cpu_time">72970906</stat>
+          <stat name="user_io_wait_time">16697569</stat>
+          <stat name="other_wait_time">5120215</stat>
+          <stat name="buffer_gets">595744</stat>
+          <stat name="disk_reads">631177</stat>
+          <stat name="direct_writes">35743</stat>
+        </stats>
+        <activity_sampled start_time="07/02/2009 12:57:26" end_time="07/02/2009 12:59:01" duration="96" activity_count="96" cpu_count="77" wait_count="19">
+          <activity class="Cpu">77</activity>
+          <activity class="User I/O" event="cell smart table scan">10</activity>
+          <activity class="User I/O" event="direct path read temp">5</activity>
+          <activity class="User I/O" event="direct path write temp">4</activity>
+        </activity_sampled>
+      </session>
+      <session inst_id="1" process_name="p006" session_id="911" session_serial="723" server_group="1" server_set="1" server_num="15">
+        <stats type="monitor">
+          <stat name="elapsed_time">94018176</stat>
+          <stat name="cpu_time">73198873</stat>
+          <stat name="user_io_wait_time">15444246</stat>
+          <stat name="other_wait_time">5375057</stat>
+          <stat name="buffer_gets">595808</stat>
+          <stat name="disk_reads">631241</stat>
+          <stat name="direct_writes">35743</stat>
+        </stats>
+        <activity_sampled start_time="07/02/2009 12:57:26" end_time="07/02/2009 12:59:01" duration="96" activity_count="95" cpu_count="75" wait_count="20">
+          <activity class="Cpu">75</activity>
+          <activity class="User I/O" event="cell smart table scan">11</activity>
+          <activity class="User I/O" event="direct path read temp">5</activity>
+          <activity class="User I/O" event="direct path write temp">4</activity>
+        </activity_sampled>
+      </session>
+      <session inst_id="1" process_name="p007" session_id="965" session_serial="1253" server_group="1" server_set="1" server_num="16">
+        <stats type="monitor">
+          <stat name="elapsed_time">93186472</stat>
+          <stat name="cpu_time">73087889</stat>
+          <stat name="user_io_wait_time">16780005</stat>
+          <stat name="other_wait_time">3318578</stat>
+          <stat name="buffer_gets">595808</stat>
+          <stat name="disk_reads">631241</stat>
+          <stat name="direct_writes">35743</stat>
+        </stats>
+        <activity_sampled start_time="07/02/2009 12:57:26" end_time="07/02/2009 12:59:01" duration="96" activity_count="94" cpu_count="74" wait_count="20">
+          <activity class="Cpu">74</activity>
+          <activity class="User I/O" event="cell smart table scan">13</activity>
+          <activity class="User I/O" event="direct path read temp">4</activity>
+          <activity class="User I/O" event="direct path write temp">3</activity>
+        </activity_sampled>
+      </session>
+    </sessions>
+    <instances max_activity_count="759" max_cpu_count="-579" max_wait_count="139" max_elapsed_time="750395593" max_buffer_gets="4766394" max_io_count="5335802">
+      <instance inst_id="1">
+        <stats type="monitor">
+          <stat name="elapsed_time">750395593</stat>
+          <stat name="cpu_time">585126048</stat>
+          <stat name="user_io_wait_time">128914366</stat>
+          <stat name="application_wait_time">0</stat>
+          <stat name="concurrency_wait_time">0</stat>
+          <stat name="cluster_wait_time">0</stat>
+          <stat name="plsql_exec_time">0</stat>
+          <stat name="java_exec_time">0</stat>
+          <stat name="other_wait_time">36355179</stat>
+          <stat name="user_fetch_count">0</stat>
+          <stat name="buffer_gets">4766394</stat>
+          <stat name="disk_reads">5049858</stat>
+          <stat name="direct_writes">285944</stat>
+        </stats>
+        <activity_sampled start_time="07/02/2009 12:57:26" end_time="07/02/2009 12:59:01" duration="96" wait_count="139" cpu_count="620" activity_count="759">
+          <activity class="Cpu">620</activity>
+          <activity class="User I/O" event="cell smart table scan">81</activity>
+          <activity class="User I/O" event="direct path read temp">31</activity>
+          <activity class="User I/O" event="direct path write temp">27</activity>
+        </activity_sampled>
+      </instance>
+      <instance inst_id="2">
+        <stats type="monitor">
+          <stat name="elapsed_time">648782745</stat>
+          <stat name="cpu_time">565584018</stat>
+          <stat name="user_io_wait_time">70798475</stat>
+          <stat name="application_wait_time">4848</stat>
+          <stat name="concurrency_wait_time">0</stat>
+          <stat name="cluster_wait_time">0</stat>
+          <stat name="plsql_exec_time">0</stat>
+          <stat name="java_exec_time">0</stat>
+          <stat name="other_wait_time">12395404</stat>
+          <stat name="user_fetch_count">1</stat>
+          <stat name="buffer_gets">2872514</stat>
+          <stat name="disk_reads">3145066</stat>
+          <stat name="direct_writes">285944</stat>
+        </stats>
+        <activity_sampled start_time="07/02/2009 12:57:26" end_time="07/02/2009 12:59:02" duration="97" wait_count="85" cpu_count="579" activity_count="664">
+          <activity class="Cpu">579</activity>
+          <activity class="Other" event="PX Deq: Signal ACK RSG">2</activity>
+          <activity class="User I/O" event="cell smart table scan">36</activity>
+          <activity class="User I/O" event="direct path read temp">15</activity>
+          <activity class="User I/O" event="direct path write temp">32</activity>
+        </activity_sampled>
+      </instance>
+    </instances>
+  </parallel_info>
+  <plan_monitor max_activity_count="961" max_cpu_count="856" max_wait_count="105">
+    <operation id="0" name="SELECT STATEMENT" depth="0" position="302395" px_type="QC">
+      <partition_start>1</partition_start>
+      <partition_stop>1984</partition_stop>
+      <optimizer>
+        <cost>302395</cost>
+      </optimizer>
+      <stats type="plan_monitor">
+        <stat name="first_active">07/02/2009 12:59:02</stat>
+        <stat name="last_active">07/02/2009 12:59:02</stat>
+        <stat name="duration">1</stat>
+        <stat name="from_most_recent">0</stat>
+        <stat name="from_sql_exec_start">98</stat>
+        <stat name="starts">1</stat>
+        <stat name="cardinality">1</stat>
+      </stats>
+    </operation>
+    <operation id="1" parent_id="0" name="SORT" options="AGGREGATE" depth="1" position="1" px_type="QC">
+      <partition_start>1</partition_start>
+      <partition_stop>1984</partition_stop>
+      <optimizer>
+        <cardinality>1</cardinality>
+        <bytes>88</bytes>
+      </optimizer>
+      <stats type="plan_monitor">
+        <stat name="first_active">07/02/2009 12:59:02</stat>
+        <stat name="last_active">07/02/2009 12:59:02</stat>
+        <stat name="duration">1</stat>
+        <stat name="from_most_recent">0</stat>
+        <stat name="from_sql_exec_start">98</stat>
+        <stat name="starts">1</stat>
+        <stat name="cardinality">1</stat>
+      </stats>
+    </operation>
+    <operation id="2" parent_id="1" name="PX COORDINATOR" depth="2" position="1" px_type="QC">
+      <partition_start>1</partition_start>
+      <partition_stop>1984</partition_stop>
+      <stats type="plan_monitor">
+        <stat name="first_active">07/02/2009 12:59:01</stat>
+        <stat name="last_active">07/02/2009 12:59:02</stat>
+        <stat name="duration">2</stat>
+        <stat name="from_most_recent">0</stat>
+        <stat name="from_sql_exec_start">97</stat>
+        <stat name="starts">17</stat>
+        <stat name="cardinality">16</stat>
+      </stats>
+      <activity_sampled start_time="07/02/2009 12:59:01" end_time="07/02/2009 12:59:02" duration="2" wait_count="2" cpu_count="0" activity_count="2" most_active="Other">
+        <activity class="Other" event="PX Deq: Signal ACK RSG">2</activity>
+        <activity_histogram>
+          <bucket bucket_number="2" wait_count="2" cpu_count="0" activity_count="2" most_active="Other">
+            <activity class="Other" event="PX Deq: Signal ACK RSG">2</activity>
+          </bucket>
+        </activity_histogram>
+      </activity_sampled>
+    </operation>
+    <operation id="3" parent_id="2" name="PX SEND" options="QC (RANDOM)" depth="3" position="1" px_type="1">
+      <object>
+        <owner><![CDATA[SYS]]></owner>
+        <name><![CDATA[:TQ10000]]></name>
+      </object>
+      <partition_start>1</partition_start>
+      <partition_stop>1984</partition_stop>
+      <optimizer>
+        <cardinality>1</cardinality>
+        <bytes>88</bytes>
+      </optimizer>
+      <stats type="plan_monitor">
+        <stat name="first_active">07/02/2009 12:58:47</stat>
+        <stat name="last_active">07/02/2009 12:59:00</stat>
+        <stat name="duration">14</stat>
+        <stat name="from_most_recent">2</stat>
+        <stat name="from_sql_exec_start">83</stat>
+        <stat name="starts">16</stat>
+        <stat name="cardinality">16</stat>
+      </stats>
+    </operation>
+    <operation id="4" parent_id="3" name="SORT" options="AGGREGATE" depth="4" position="1" px_type="1">
+      <partition_start>1</partition_start>
+      <partition_stop>1984</partition_stop>
+      <optimizer>
+        <cardinality>1</cardinality>
+        <bytes>88</bytes>
+      </optimizer>
+      <stats type="plan_monitor">
+        <stat name="first_active">07/02/2009 12:57:40</stat>
+        <stat name="last_active">07/02/2009 12:59:00</stat>
+        <stat name="duration">81</stat>
+        <stat name="from_most_recent">2</stat>
+        <stat name="from_sql_exec_start">16</stat>
+        <stat name="starts">16</stat>
+        <stat name="cardinality">16</stat>
+      </stats>
+      <activity_sampled start_time="07/02/2009 12:57:40" end_time="07/02/2009 12:59:00" duration="81" wait_count="0" cpu_count="174" activity_count="174" most_active="Cpu">
+        <activity class="Cpu">174</activity>
+        <activity_histogram>
+          <bucket bucket_number="1" wait_count="0" cpu_count="85" activity_count="85" most_active="Cpu">
+            <activity class="Cpu">85</activity>
+          </bucket>
+          <bucket bucket_number="2" wait_count="0" cpu_count="89" activity_count="89" most_active="Cpu">
+            <activity class="Cpu">89</activity>
+          </bucket>
+        </activity_histogram>
+      </activity_sampled>
+    </operation>
+    <operation id="5" parent_id="4" name="PX PARTITION HASH" options="ALL" depth="5" position="1" px_type="1">
+      <partition_start>1</partition_start>
+      <partition_stop>1984</partition_stop>
+      <optimizer>
+        <cardinality>470212498</cardinality>
+        <bytes>41378699824</bytes>
+        <cost>302395</cost>
+        <cpu_cost>32712383643</cpu_cost>
+        <io_cost>300864</io_cost>
+        <time>3629</time>
+      </optimizer>
+      <stats type="plan_monitor">
+        <stat name="first_active">07/02/2009 12:57:40</stat>
+        <stat name="last_active">07/02/2009 12:59:00</stat>
+        <stat name="duration">81</stat>
+        <stat name="from_most_recent">2</stat>
+        <stat name="from_sql_exec_start">16</stat>
+        <stat name="starts">16</stat>
+        <stat name="cardinality">468131275</stat>
+      </stats>
+    </operation>
+    <operation id="6" parent_id="5" name="HASH JOIN" depth="6" position="1" px_type="1">
+      <partition_start>1</partition_start>
+      <partition_stop>1984</partition_stop>
+      <optimizer>
+        <cardinality>470212498</cardinality>
+        <bytes>41378699824</bytes>
+        <cost>302395</cost>
+        <cpu_cost>32712383643</cpu_cost>
+        <io_cost>300864</io_cost>
+        <time>3629</time>
+      </optimizer>
+      <stats type="plan_monitor">
+        <stat name="first_active">07/02/2009 12:57:26</stat>
+        <stat name="last_active">07/02/2009 12:59:00</stat>
+        <stat name="duration">95</stat>
+        <stat name="from_most_recent">2</stat>
+        <stat name="from_sql_exec_start">2</stat>
+        <stat name="starts">64</stat>
+        <stat name="cardinality">468131275</stat>
+        <stat name="max_memory">10420714496</stat>
+        <stat name="max_temp">5804916736</stat>
+      </stats>
+      <activity_sampled start_time="07/02/2009 12:57:26" end_time="07/02/2009 12:58:59" duration="94" wait_count="105" cpu_count="856" activity_count="961" most_active="Cpu">
+        <activity class="Cpu">856</activity>
+        <activity class="User I/O" event="direct path read temp">46</activity>
+        <activity class="User I/O" event="direct path write temp">59</activity>
+        <activity_histogram>
+          <bucket bucket_number="1" wait_count="105" cpu_count="451" activity_count="556" most_active="Cpu">
+            <activity class="Cpu">451</activity>
+            <activity class="User I/O" event="direct path read temp">46</activity>
+            <activity class="User I/O" event="direct path write temp">59</activity>
+          </bucket>
+          <bucket bucket_number="2" wait_count="0" cpu_count="405" activity_count="405" most_active="Cpu">
+            <activity class="Cpu">405</activity>
+          </bucket>
+        </activity_histogram>
+      </activity_sampled>
+    </operation>
+    <operation id="7" parent_id="6" name="PX PARTITION RANGE" options="ALL" depth="7" position="1" px_type="1">
+      <partition_start>1</partition_start>
+      <partition_stop>1984</partition_stop>
+      <optimizer>
+        <cardinality>468131275</cardinality>
+        <bytes>17788988450</bytes>
+        <cost>73512</cost>
+        <cpu_cost>10728008385</cpu_cost>
+        <io_cost>73010</io_cost>
+        <time>883</time>
+      </optimizer>
+      <stats type="plan_monitor">
+        <stat name="first_active">07/02/2009 12:57:26</stat>
+        <stat name="last_active">07/02/2009 12:58:50</stat>
+        <stat name="duration">85</stat>
+        <stat name="from_most_recent">12</stat>
+        <stat name="from_sql_exec_start">2</stat>
+        <stat name="starts">64</stat>
+        <stat name="cardinality">468131275</stat>
+      </stats>
+    </operation>
+    <operation id="8" parent_id="7" name="TABLE ACCESS" depth="8" position="1" px_type="1">
+      <object type="TABLE">
+        <owner><![CDATA[D31]]></owner>
+        <name><![CDATA[DWB_RTL_TRX]]></name>
+        <alias><![CDATA[T2@SEL$1]]></alias>
+      </object>
+      <partition_start>1</partition_start>
+      <partition_stop>1984</partition_stop>
+      <optimizer>
+        <cardinality>468131275</cardinality>
+        <bytes>17788988450</bytes>
+        <cost>73512</cost>
+        <cpu_cost>10728008385</cpu_cost>
+        <io_cost>73010</io_cost>
+        <time>883</time>
+      </optimizer>
+      <stats type="plan_monitor">
+        <stat name="first_active">07/02/2009 12:57:26</stat>
+        <stat name="last_active">07/02/2009 12:58:50</stat>
+        <stat name="duration">85</stat>
+        <stat name="from_most_recent">12</stat>
+        <stat name="from_sql_exec_start">2</stat>
+        <stat name="starts">1984</stat>
+        <stat name="cardinality">468131275</stat>
+      </stats>
+      <activity_sampled start_time="07/02/2009 12:57:26" end_time="07/02/2009 12:58:48" duration="83" wait_count="49" cpu_count="73" activity_count="122" most_active="Cpu">
+        <activity class="Cpu">73</activity>
+        <activity class="User I/O" event="cell smart table scan">49</activity>
+        <activity_histogram>
+          <bucket bucket_number="1" wait_count="31" cpu_count="42" activity_count="73" most_active="Cpu">
+            <activity class="Cpu">42</activity>
+            <activity class="User I/O" event="cell smart table scan">31</activity>
+          </bucket>
+          <bucket bucket_number="2" wait_count="18" cpu_count="31" activity_count="49" most_active="Cpu">
+            <activity class="Cpu">31</activity>
+            <activity class="User I/O" event="cell smart table scan">18</activity>
+          </bucket>
+        </activity_histogram>
+      </activity_sampled>
+    </operation>
+    <operation id="9" parent_id="6" name="PX PARTITION RANGE" options="ALL" depth="7" position="2" px_type="1">
+      <partition_start>1</partition_start>
+      <partition_stop>1984</partition_stop>
+      <optimizer>
+        <cardinality>468131275</cardinality>
+        <bytes>23406563750</bytes>
+        <cost>73481</cost>
+        <cpu_cost>10077826059</cpu_cost>
+        <io_cost>73010</io_cost>
+        <time>882</time>
+      </optimizer>
+      <stats type="plan_monitor">
+        <stat name="first_active">07/02/2009 12:57:40</stat>
+        <stat name="last_active">07/02/2009 12:59:00</stat>
+        <stat name="duration">81</stat>
+        <stat name="from_most_recent">2</stat>
+        <stat name="from_sql_exec_start">16</stat>
+        <stat name="starts">64</stat>
+        <stat name="cardinality">468131275</stat>
+      </stats>
+    </operation>
+    <operation id="10" parent_id="9" name="TABLE ACCESS" depth="8" position="1" px_type="1">
+      <object type="TABLE">
+        <owner><![CDATA[D31]]></owner>
+        <name><![CDATA[DWB_RTL_TRX]]></name>
+        <alias><![CDATA[T1@SEL$1]]></alias>
+      </object>
+      <partition_start>1</partition_start>
+      <partition_stop>1984</partition_stop>
+      <optimizer>
+        <cardinality>468131275</cardinality>
+        <bytes>23406563750</bytes>
+        <cost>73481</cost>
+        <cpu_cost>10077826059</cpu_cost>
+        <io_cost>73010</io_cost>
+        <time>882</time>
+      </optimizer>
+      <stats type="plan_monitor">
+        <stat name="first_active">07/02/2009 12:57:34</stat>
+        <stat name="last_active">07/02/2009 12:59:00</stat>
+        <stat name="duration">87</stat>
+        <stat name="from_most_recent">2</stat>
+        <stat name="from_sql_exec_start">10</stat>
+        <stat name="starts">1984</stat>
+        <stat name="cardinality">468131275</stat>
+      </stats>
+      <activity_sampled start_time="07/02/2009 12:57:40" end_time="07/02/2009 12:59:00" duration="81" wait_count="68" cpu_count="72" activity_count="140" most_active="Cpu">
+        <activity class="Cpu">72</activity>
+        <activity class="User I/O" event="cell smart table scan">68</activity>
+        <activity_histogram>
+          <bucket bucket_number="1" wait_count="26" cpu_count="28" activity_count="54" most_active="Cpu">
+            <activity class="Cpu">28</activity>
+            <activity class="User I/O" event="cell smart table scan">26</activity>
+          </bucket>
+          <bucket bucket_number="2" wait_count="42" cpu_count="44" activity_count="86" most_active="Cpu">
+            <activity class="Cpu">44</activity>
+            <activity class="User I/O" event="cell smart table scan">42</activity>
+          </bucket>
+        </activity_histogram>
+      </activity_sampled>
+    </operation>
+  </plan_monitor>
+</sql_monitor_report>
+
+

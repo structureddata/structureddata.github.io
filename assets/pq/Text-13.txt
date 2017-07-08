@@ -1,0 +1,96 @@
+select * from dba_hist_ic_client_stats
+where snap_id between 910 and 911
+and name='ipq'
+order by snap_id, INSTANCE_NUMBER
+
+SQL> desc dba_hist_ic_client_stats
+ Name					   Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ SNAP_ID				   NOT NULL NUMBER
+ DBID					   NOT NULL NUMBER
+ INSTANCE_NUMBER			   NOT NULL NUMBER
+ NAME					   NOT NULL VARCHAR2(9)
+ BYTES_SENT					    NUMBER
+ BYTES_RECEIVED 				    NUMBER
+
+
+select
+  snap_id, instance_number,
+  BYTES_SENT/1024/1024 MB_SENT,
+  lag(BYTES_SENT,1) over (order by instance_number,snap_id) lag_BYTES_SENT ,
+  BYTES_RECEIVED/1024/1024 MB_RCV ,
+  lag(BYTES_RECEIVED,1) over (order by instance_number,snap_id) lag_BYTES_RECEIVED,
+  (BYTES_SENT     -lag(BYTES_SENT,1)      over (order by instance_number,snap_id))/1024/1024 diff_sent_mb,
+  (BYTES_RECEIVED -lag(BYTES_RECEIVED,1)  over (order by instance_number,snap_id))/1024/1024 diff_received_mb
+from dba_hist_ic_client_stats
+where name='ipq'
+and snap_id between 910 and 917
+order by instance_number,snap_id
+/
+
+compute sum of DIFF_RECEIVED_MB on SNAP_ID
+compute sum of DIFF_SENT_MB on SNAP_ID
+select * from (
+select
+  snap_id, instance_number,
+  BYTES_SENT/1024/1024 MB_SENT,
+  lag(BYTES_SENT,1) over (order by instance_number,snap_id) lag_BYTES_SENT ,
+  BYTES_RECEIVED/1024/1024 MB_RCV ,
+  lag(BYTES_RECEIVED,1) over (order by instance_number,snap_id) lag_BYTES_RECEIVED,
+  (BYTES_SENT     -lag(BYTES_SENT,1)      over (order by instance_number,snap_id))/1024/1024 diff_sent_mb,
+  (BYTES_RECEIVED -lag(BYTES_RECEIVED,1)  over (order by instance_number,snap_id))/1024/1024 diff_received_mb
+from dba_hist_ic_client_stats
+where name='ipq'
+and snap_id between 910 and 917
+order by snap_id,instance_number
+)
+where snap_id in (911,913,915,917)
+and DIFF_RECEIVED_MB>10
+/
+
+   SNAP_ID INSTANCE_NUMBER    MB_SENT LAG_BYTES_SENT	 MB_RCV LAG_BYTES_RECEIVED DIFF_SENT_MB DIFF_RECEIVED_MB
+---------- --------------- ---------- -------------- ---------- ------------------ ------------ ----------------
+       913		 1 16536.6618	  5172727199 14588.4662 	4090177890   11603.5647       10687.7686
+       913		 2 12520.5922	  1919043687  13561.816 	2073706266   10690.4495       11584.1756
+
+       915		 1 24898.0583	  1.7349E+10  22945.414 	1.5304E+10   8352.83296       8350.04972
+       915		 2 20658.7811	  1.3134E+10 21983.0882 	1.4224E+10   8133.14431       8417.60583
+       915		 3 10232.3562	  1925533656 10320.8458 	2081428133   8396.02420       8335.84122
+       915		 4 10049.5127	  1610195544 9953.14753 	1734398625   8513.91059       8299.09610
+
+       917		 1 29964.8044	  2.6142E+10 27825.5557 	2.4088E+10   5033.39396       4853.38534
+       917		 2 25428.7021	  2.1675E+10 26884.2365 	2.3065E+10   4757.78944       4887.85106
+       917		 3 15200.9795	  1.0742E+10 15197.1577 	1.0836E+10   4956.49383       4863.01474
+       917		 4 15092.9649	  1.0552E+10 14818.4524 	1.0451E+10   5029.33163       4851.79337
+       917		 5 6270.22461	  1445054622 6354.43652 	1555729676   4892.11313       4870.77708
+       917		 6 6595.86007	  1940821733 6890.64906 	2097763759   4744.94823       4890.06564
+       917		 7 6133.80051	  1447869453 6376.06838 	1558847713   4753.00460       4889.43535
+       917		 8 6670.72327	  1939145042 6880.30071 	2096545301   4821.41045       4880.87930
+
+14 rows selected.
+
+   SNAP_ID INSTANCE_NUMBER DIFF_SENT_MB DIFF_RECEIVED_MB
+---------- --------------- ------------ ----------------
+       913		 1	  11604 	   10688
+			 2	  10690 	   11584
+**********		   ------------ ----------------
+sum				  22294 	   22272
+
+       915		 1	   8353 	    8350
+			 2	   8133 	    8418
+			 3	   8396 	    8336
+			 4	   8514 	    8299
+**********		   ------------ ----------------
+sum				  33396 	   33403
+
+       917		 1	   5033 	    4853
+			 2	   4758 	    4888
+			 3	   4956 	    4863
+			 4	   5029 	    4852
+			 5	   4892 	    4871
+			 6	   4745 	    4890
+			 7	   4753 	    4889
+			 8	   4821 	    4881
+**********		   ------------ ----------------
+sum				  38987 	   38987
+

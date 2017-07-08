@@ -1,0 +1,82 @@
+
+PLAN_TABLE_OUTPUT
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+SQL_ID  8dkv0z9wm9881, child number 0
+-------------------------------------
+select /* eight */        /*+ parallel (t1, 16) parallel (t2, 16) */
+    min (t1.bsns_unit_key + t2.bsns_unit_key),        max (t1.day_key +
+t2.day_key),        avg (t1.day_key + t2.day_key),        max
+(t1.bsns_unit_typ_cd),        max (t2.curr_ind),        max
+(t1.load_dt) from   d31.dwb_rtl_trx t1,        d31.dwb_rtl_trx t2 where
+ t1.trx_nbr = t2.trx_nbr
+
+Plan hash value: 1755470101
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+| Id  | Operation                        | Name        | Rows  | Bytes |TempSpc| Cost (%CPU)| Time     | Pstart| Pstop |    TQ  |IN-OUT| PQ Distrib |
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+|   0 | SELECT STATEMENT                 |             |       |       |       |   302K(100)|          |       |       |        |      |            |
+|   1 |  SORT AGGREGATE                  |             |     1 |    88 |       |            |          |       |       |        |      |            |
+|   2 |   PX COORDINATOR                 |             |       |       |       |            |          |       |       |        |      |            |
+|   3 |    PX SEND QC (RANDOM)           | :TQ10000    |     1 |    88 |       |            |          |       |       |  Q1,00 | P->S | QC (RAND)  |
+|   4 |     SORT AGGREGATE               |             |     1 |    88 |       |            |          |       |       |  Q1,00 | PCWP |            |
+|   5 |      PX PARTITION HASH ALL       |             |   470M|    38G|       |   302K  (1)| 01:00:29 |     1 |    64 |  Q1,00 | PCWC |            |
+|*  6 |       HASH JOIN                  |             |   470M|    38G|  1395M|   302K  (1)| 01:00:29 |       |       |  Q1,00 | PCWP |            |
+|   7 |        PX PARTITION RANGE ALL    |             |   468M|    16G|       | 73512   (1)| 00:14:43 |     1 |    31 |  Q1,00 | PCWC |            |
+|   8 |         TABLE ACCESS STORAGE FULL| DWB_RTL_TRX |   468M|    16G|       | 73512   (1)| 00:14:43 |     1 |  1984 |  Q1,00 | PCWP |            |
+|   9 |        PX PARTITION RANGE ALL    |             |   468M|    21G|       | 73481   (1)| 00:14:42 |     1 |    31 |  Q1,00 | PCWC |            |
+|  10 |         TABLE ACCESS STORAGE FULL| DWB_RTL_TRX |   468M|    21G|       | 73481   (1)| 00:14:42 |     1 |  1984 |  Q1,00 | PCWP |            |
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+
+Query Block Name / Object Alias (identified by operation id):
+-------------------------------------------------------------
+
+   1 - SEL$1
+   8 - SEL$1 / T2@SEL$1
+  10 - SEL$1 / T1@SEL$1
+
+Outline Data
+-------------
+
+  /*+
+      BEGIN_OUTLINE_DATA
+      IGNORE_OPTIM_EMBEDDED_HINTS
+      OPTIMIZER_FEATURES_ENABLE('11.1.0.7')
+      DB_VERSION('11.1.0.7')
+      ALL_ROWS
+      OUTLINE_LEAF(@"SEL$1")
+      FULL(@"SEL$1" "T1"@"SEL$1")
+      FULL(@"SEL$1" "T2"@"SEL$1")
+      LEADING(@"SEL$1" "T1"@"SEL$1" "T2"@"SEL$1")
+      USE_HASH(@"SEL$1" "T2"@"SEL$1")
+      PQ_DISTRIBUTE(@"SEL$1" "T2"@"SEL$1" NONE NONE)
+      SWAP_JOIN_INPUTS(@"SEL$1" "T2"@"SEL$1")
+      END_OUTLINE_DATA
+  */
+
+Predicate Information (identified by operation id):
+---------------------------------------------------
+
+   6 - access("T1"."TRX_NBR"="T2"."TRX_NBR")
+
+Column Projection Information (identified by operation id):
+-----------------------------------------------------------
+
+   1 - (#keys=0) COUNT()[22], SUM()[22], MAX()[1], MAX()[7], MAX()[22], MIN()[22], MAX()[30]
+   2 - SYS_OP_MSR()[125]
+   3 - (#keys=0) SYS_OP_MSR()[125]
+   4 - (#keys=0) SYS_OP_MSR()[125]
+   5 - "T2"."CURR_IND"[CHARACTER,1], "T2"."BSNS_UNIT_KEY"[NUMBER,22], "T2"."DAY_KEY"[NUMBER,22], "T1"."LOAD_DT"[DATE,7],
+       "T1"."BSNS_UNIT_KEY"[NUMBER,22], "T1"."DAY_KEY"[NUMBER,22], "T1"."BSNS_UNIT_TYP_CD"[VARCHAR2,30]
+   6 - (#keys=1) "T2"."CURR_IND"[CHARACTER,1], "T2"."BSNS_UNIT_KEY"[NUMBER,22], "T2"."DAY_KEY"[NUMBER,22], "T1"."LOAD_DT"[DATE,7],
+       "T1"."BSNS_UNIT_KEY"[NUMBER,22], "T1"."DAY_KEY"[NUMBER,22], "T1"."BSNS_UNIT_TYP_CD"[VARCHAR2,30]
+   7 - "T2"."TRX_NBR"[VARCHAR2,30], "T2"."BSNS_UNIT_KEY"[NUMBER,22], "T2"."DAY_KEY"[NUMBER,22], "T2"."CURR_IND"[CHARACTER,1]
+   8 - "T2"."TRX_NBR"[VARCHAR2,30], "T2"."BSNS_UNIT_KEY"[NUMBER,22], "T2"."DAY_KEY"[NUMBER,22], "T2"."CURR_IND"[CHARACTER,1]
+   9 - "T1"."TRX_NBR"[VARCHAR2,30], "T1"."BSNS_UNIT_KEY"[NUMBER,22], "T1"."DAY_KEY"[NUMBER,22], "T1"."BSNS_UNIT_TYP_CD"[VARCHAR2,30],
+       "T1"."LOAD_DT"[DATE,7]
+  10 - "T1"."TRX_NBR"[VARCHAR2,30], "T1"."BSNS_UNIT_KEY"[NUMBER,22], "T1"."DAY_KEY"[NUMBER,22], "T1"."BSNS_UNIT_TYP_CD"[VARCHAR2,30],
+       "T1"."LOAD_DT"[DATE,7]
+
+
+
+Elapsed: 00:00:00.04
