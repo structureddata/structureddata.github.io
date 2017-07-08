@@ -1,4 +1,0 @@
-insert into grahn.ksxp
-select x.*, sysdate
-from sys.x$ksxpclient x
-/
