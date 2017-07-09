@@ -42,7 +42,9 @@ pre code {
   padding: 0;
   white-space: pre;
   border: none;
-  background: transparent; }
+  background: transparent;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  font-size: 13px;}
 
 .highlight pre {
   background-color: #f8f8f8;
