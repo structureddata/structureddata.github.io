@@ -26,7 +26,7 @@ minima:
 disqus:
   shortname: structureddata
 
-google_analytics: UA-302138-5
+google_analytics: UA-302138-10
 
 # Build settings
 markdown: kramdown
